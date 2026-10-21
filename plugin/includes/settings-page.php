@@ -205,15 +205,6 @@ function bbcoa_render_county_list() {
 	<?php
 }
 
-// Elementor saved templates on this site, for the header search setting.
-function bbcoa_template_options() {
-	$options = [ '' => '— None —' ];
-	foreach ( get_posts( [ 'post_type' => 'elementor_library', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC' ] ) as $post ) {
-		$options[ (string) $post->ID ] = $post->post_title . ' (#' . $post->ID . ')';
-	}
-	return $options;
-}
-
 function bbcoa_render_county_editor( $id ) {
 	$is_new = 'new' === $id;
 	if ( $is_new ) {
@@ -286,18 +277,6 @@ function bbcoa_render_county_editor( $id ) {
 							</span>
 						<?php elseif ( 'toggle' === $field['type'] ) : ?>
 							<label><input type="checkbox" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $name ); ?>" value="1" <?php checked( '1', $value ); ?>> On</label>
-						<?php elseif ( 'template' === $field['type'] ) : ?>
-							<select id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $name ); ?>">
-								<?php
-								$options = bbcoa_template_options();
-								if ( '' !== $value && ! isset( $options[ $value ] ) ) {
-									$options[ $value ] = 'Template #' . $value . ' (not on this site)';
-								}
-								foreach ( $options as $option_value => $label ) :
-									?>
-									<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( (string) $option_value, $value ); ?>><?php echo esc_html( $label ); ?></option>
-								<?php endforeach; ?>
-							</select>
 						<?php else : ?>
 							<input type="text" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $name ); ?>" value="<?php echo esc_attr( $value ); ?>" class="regular-text" placeholder="<?php echo esc_attr( $default ); ?>">
 						<?php endif; ?>

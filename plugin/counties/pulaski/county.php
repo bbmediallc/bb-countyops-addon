@@ -17,5 +17,4 @@ return [
 	'banner_image' => '',
 	'banner_position' => '',
 	'header_search' => '',
-	'header_search_template' => '',
 ];

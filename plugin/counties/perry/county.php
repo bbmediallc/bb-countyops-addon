@@ -15,5 +15,4 @@ return [
 	'banner_image' => '/wp-content/uploads/2026/04/Perry-County-Courthouse.jpg',
 	'banner_position' => '',
 	'header_search' => '',
-	'header_search_template' => '',
 ];

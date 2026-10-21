@@ -15,5 +15,4 @@ return [
 	'banner_image' => '/wp-content/uploads/2026/04/front-of-courthouse-updated.webp',
 	'banner_position' => '50% 40%',
 	'header_search' => '',
-	'header_search_template' => '',
 ];

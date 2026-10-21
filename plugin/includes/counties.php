@@ -28,8 +28,7 @@ function bbcoa_county_fields() {
 		'banner_image'           => [ 'section' => 'banner', 'type' => 'image', 'label' => 'Banner image', 'help' => 'Background of the page header banner and search results header. Leave blank to keep the theme\'s own.' ],
 		'banner_position'        => [ 'section' => 'banner', 'type' => 'text', 'label' => 'Banner focal point', 'default' => '50% 50%', 'help' => 'Which part of the image stays in view, as "left top", e.g. 50% 40% shows a little more of the top.' ],
 
-		'header_search'          => [ 'section' => 'header_search', 'type' => 'toggle', 'label' => 'Search in header', 'help' => 'Adds a search box to the top bar of the header, beside the top menu.' ],
-		'header_search_template' => [ 'section' => 'header_search', 'type' => 'template', 'label' => 'Search template', 'help' => 'The Elementor template (Templates > Saved Templates) that holds the search form. Each site needs its own.' ],
+		'header_search'          => [ 'section' => 'header_search', 'type' => 'toggle', 'label' => 'Search in header', 'help' => 'Adds a site search box to the top bar of the header, beside the top menu. Its button uses the Accent color.' ],
 	];
 }
 
@@ -198,9 +197,6 @@ function bbcoa_sanitize_county( $input ) {
 				break;
 			case 'toggle':
 				$value = '' !== $value ? '1' : '';
-				break;
-			case 'template':
-				$value = absint( $value ) ? (string) absint( $value ) : '';
 				break;
 			default:
 				$value = sanitize_text_field( $value );

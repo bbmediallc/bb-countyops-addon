@@ -67,8 +67,7 @@ code runs with the default colors and no banner or header search.
 | Footer link hover color | `#AF8C5D` | Footer heading links on hover. |
 | Banner image | none | Background of the page header banner (`.page-breadcrumb`) and the search results header. Stored as `/wp-content/uploads/...` when it's on the same site, so it survives the move from staging to live. |
 | Banner focal point | `50% 50%` | `background-position` of the banner, e.g. `50% 40%`. |
-| Search in header | off | Puts an Elementor search template in the header top bar. |
-| Search template | | Which Elementor saved template holds the search form. Each site needs its own (Templates > Saved Templates). |
+| Search in header | off | Puts a site search box in the header top bar, beside the top menu. Built into the plugin; the button uses the Accent color. |
 
 Every other color in the shared CSS (the `#7f0003` focus outlines etc.) is the
 same on all counties and fixed in the files.
@@ -105,7 +104,7 @@ Everything below runs on every county. "WCAG" references are to WCAG 2.1.
 | `mobile-menu-button.php` | Fix Mobile Menu Button Issues | Gives the mobile menu opener `role="button"`, a label, `aria-controls` and a live `aria-expanded`; Space opens/closes it; hides the overlay from screen readers (WCAG 4.1.2, 2.1.1). |
 | `clickable-home-pods.php` | Clickable Home Pods | Makes the whole GovArnex Features box ("home pod") clickable. Keyboard focus is one solid maroon outline around the whole pod, none on the title link, none on mouse clicks (WCAG 2.4.7). Don't add a title-link focus outline in ADA Styles, or keyboard users see two. |
 | `faq-answer-editor.php` | Govarnex FAQ Answer WYSIWYG Editor | GovArnex FAQ widget: rich text editor for answers instead of a plain box, panel items labeled by question, and empty paragraphs hidden. |
-| `header-search.php` | Add Search to Header (Laclede) | The **Search in header** county setting. Renders the county's Elementor search template and inserts it after the header's top-left menu. Styles in `assets/css/header-search.css`. |
+| `header-search.php` | Add Search to Header (Laclede) | The **Search in header** county setting. A built-in, accessible search form (labeled input, labeled button, `role="search"`) inserted after the header's top-left menu; it submits to the normal search results page. Laclede's version was an Elementor Pro Search widget in a saved template; this one needs no template and has no live-results dropdown. Styles in `assets/css/header-search.css`. |
 
 ### Former Simple Custom CSS and JS items (`plugin/assets/`)
 
@@ -144,7 +143,7 @@ so the cascade is unchanged: every script first, then the CSS (see
 | `backend-overrides.css` | Backend Overrides | wp-admin (and front-end toolbar): hides unused toolbar items and the media modal's alt-text hint, and shows a large "Remember to add ALT text" reminder in the media library. |
 | `ada-styles.css` | ADA Styles | Focus-visible outlines, contrast and underline fixes across the theme, widgets and forms. |
 | `theme-overrides.css` | Theme Overrides | GovArnex look-and-feel fixes: header/logo sizing, menus, banner, footer, buttons, TablePress, service cards, accordions, search results. Uses the county's colors and banner. Prints last so it wins ties. |
-| `header-search.css` | Laclede's Theme Overrides | Layout of the top bar when **Search in header** is on. Only prints for counties using it. |
+| `header-search.css` | Laclede's Theme Overrides | Top bar layout and the search form's look (sized and colored to match Laclede's original) when **Search in header** is on. Only prints for counties using it. |
 
 The plugin also prints `.page-content { overflow: unset; }` at the same point
 WordPress prints Additional CSS. It was in every site's Customizer

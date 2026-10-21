@@ -2,6 +2,16 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.1.0] - 2026-10-21
+
+### Changed
+- Search in header is now built into the plugin: turning it on in County
+  Settings is all it takes. It no longer needs an Elementor search template,
+  and the "Search template" setting is gone. The form matches Laclede's
+  original (white box, light gray border, Accent color button with the
+  theme's search icon) and submits to the normal search results page. Unlike
+  Laclede's Elementor widget, it has no live-results dropdown.
+
 ## [1.0.2] - 2026-10-21
 
 ### Fixed
