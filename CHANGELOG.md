@@ -2,6 +2,12 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.3.1] - 2026-10-21
+
+### Fixed
+- Table of Contents links had the browser's solid blue focus outline; they
+  now get the site's 3px dashed maroon outline like other links.
+
 ## [1.3.0] - 2026-10-21
 
 ### Added

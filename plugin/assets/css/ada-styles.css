@@ -8,6 +8,7 @@ a.custom-logo-link:focus-visible,
 .features-style1__single-content h3 a:focus-visible,
 .services-style1__single-text h3 a:focus-visible,
 .btn-box a:focus-visible,
+.elementor-toc__list-item-text:focus-visible,
 .e-n-accordion-item-title:focus-visible{
     outline: 3px dashed #7f0003 !important;
     outline-offset: 3px !important;
