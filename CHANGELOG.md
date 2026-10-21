@@ -2,6 +2,13 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.4.2] - 2026-10-21
+
+### Fixed
+- Mobile menu: opening it left focus on the hamburger behind the drawer
+  (WCAG 2.4.3). The close X becomes visible about 100ms after the panel, so
+  the single focus attempt failed; it now retries until focus lands on the X.
+
 ## [1.4.1] - 2026-10-21
 
 ### Removed

@@ -75,10 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isOpen = () => wrapper.classList.contains('expanded');
     const focusables = () => [...content.querySelectorAll('a[href], button, [tabindex="0"]')].filter(el => el.getClientRects().length);
-    const focusClose = () => {
-      if (!isOpen()) return;
-      if (getComputedStyle(content).visibility === 'visible') close.focus();
-      else requestAnimationFrame(focusClose);
+    // The close X becomes visible ~100ms after the panel, so keep trying
+    // (up to ~2 seconds of frames) until focus actually lands on it.
+    const focusClose = (tries = 0) => {
+      if (!isOpen() || tries > 120) return;
+      close.focus();
+      if (document.activeElement !== close) requestAnimationFrame(() => focusClose(tries + 1));
     };
     const setOpen = open => {
       wrapper.classList.toggle('expanded', open);
