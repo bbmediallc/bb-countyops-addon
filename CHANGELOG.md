@@ -2,6 +2,12 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.0.1] - 2026-10-21
+
+### Added
+- County Ops Overrides: the CountyOps records status page
+  (`.mid-tax-payment.mid-tax-records-status`) uses the full content width.
+
 ## [1.0.0] - 2026-10-21
 
 First release. Replaces the code that was copied into every county
