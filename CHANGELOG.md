@@ -2,6 +2,22 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.3.0] - 2026-10-21
+
+### Added
+- County Admin menu, built in (replaces the Hide Admin Menu plugin): the same
+  22 menus and 107 submenus hidden for County Admins as on Stoddard and
+  Pulaski. Those screens are now also blocked if opened by address.
+
+### Fixed
+- FAQ toggles (GovArnex FAQ widget), WCAG 4.1.2 and 1.3.1:
+  - Clicking an open question now closes it, opening one closes the others,
+    and aria-expanded always matches what's on screen. The new ADA
+    Accordions script is the only thing driving the toggles.
+  - Each question is a real button inside its <h3>, so screen readers keep
+    the headings (the bar is no longer role="button"). Enter and Space work
+    natively. Dashed black focus outline on the button.
+
 ## [1.2.0] - 2026-10-21
 
 ### Added

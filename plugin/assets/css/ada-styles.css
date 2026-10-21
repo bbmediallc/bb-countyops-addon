@@ -330,3 +330,6 @@ h6 a {
 #wpadminbar * {
   font-size: 13px !important;
 }
+/* FAQ question buttons (see includes/snippets/faq-toggle-buttons.php). */
+.accordion-box .acc-trigger{all:unset;cursor:pointer;display:block;width:100%}
+.accordion-box .acc-trigger:focus-visible{outline:3px dashed #000000;outline-offset:4px}

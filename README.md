@@ -108,6 +108,22 @@ update, sites gain any added permission and lose any removed one, but
 permissions other plugins add on their own (Wordfence's 2FA ones on the live
 sites) are never touched. Deleting the plugin leaves the role in place.
 
+## County Admin menu
+
+`includes/admin-menu.php` decides what County Admins see in wp-admin. It
+replaces the Hide Admin Menu plugin with the same list it had on Stoddard
+and Pulaski (22 menus, 107 submenus), removed the same way, including Hide
+Admin Menu's quirk that hiding a Customizer link under Appearance also hides
+Customize. Unlike Hide Admin Menu, the hidden screens are also **blocked**:
+opening one by its address shows "Sorry, you are not allowed to access this
+page." Administrators are never affected.
+
+What County Admins keep: Dashboard, Pages (and editing with Elementor),
+Media, Forms, TablePress, Appearance > Menus and Widgets, their Profile, and
+Wordfence Login Security on the live sites.
+
+To change it, edit the two lists in `admin-menu.php` and release an update.
+
 ## What each piece does
 
 Everything below runs on every county. "WCAG" references are to WCAG 2.1.
@@ -122,6 +138,7 @@ Everything below runs on every county. "WCAG" references are to WCAG 2.1.
 | `icon-box-duplicate-links.php` | Fix Duplicate Elmentor Icon Links | A linked Icon Box links both the icon and the title. Hides the icon's link from screen readers and the tab order so there's one link (WCAG 2.4.4). |
 | `mobile-menu-button.php` | Fix Mobile Menu Button Issues | Gives the mobile menu opener `role="button"`, a label, `aria-controls` and a live `aria-expanded`; Space opens/closes it; hides the overlay from screen readers (WCAG 4.1.2, 2.1.1). |
 | `clickable-home-pods.php` | Clickable Home Pods | Makes the whole GovArnex Features box ("home pod") clickable. Keyboard focus is one solid maroon outline around the whole pod, none on the title link, none on mouse clicks (WCAG 2.4.7). Don't add a title-link focus outline in ADA Styles, or keyboard users see two. |
+| `faq-toggle-buttons.php` | (new in 1.3.0) | GovArnex FAQ widget: puts each question inside a real `<button class="acc-trigger">` within its `<h3>` and hides the plus icon from screen readers, so headings survive (WCAG 1.3.1). Done as the widget renders, so theme updates can't undo it. |
 | `faq-answer-editor.php` | Govarnex FAQ Answer WYSIWYG Editor | GovArnex FAQ widget: rich text editor for answers instead of a plain box, panel items labeled by question, and empty paragraphs hidden. |
 | `header-search.php` | Add Search to Header (Laclede) | The **Search in header** county setting. A built-in, accessible search form (labeled input, labeled button, `role="search"`) inserted after the header's top-left menu; it submits to the normal search results page. Laclede's version was an Elementor Pro Search widget in a saved template; this one needs no template and has no live-results dropdown. Styles in `assets/css/header-search.css`. |
 
@@ -150,7 +167,7 @@ so the cascade is unchanged: every script first, then the CSS (see
 | `injected-aria-labels.js` | Injected Aria Labels | Labels for the mobile menu open/close buttons and scroll-to-top. Overlaps with Mobile Menu Tabbing and `mobile-menu-button.php`; harmless, but could be merged someday. |
 | `anchor-scroll-offset.js` | Anchor Scroll Offset | Jump links (`#section`) stop 160px short so the sticky header doesn't cover the target; also handles links arriving with a `#` in the URL. |
 | `ada-gravity-forms.js` | ADA Gravity Forms | Hides the honeypot field from screen readers, adds native `required`, makes phone fields `type="tel"`, links error messages to their fields with `aria-describedby`/`aria-invalid` (WCAG 3.3.1, 1.3.5). |
-| `ada-accordions.js` | ADA Accordions | GovArnex accordions: keyboard-operable buttons with `aria-expanded`/`aria-controls`, panels with `aria-hidden` (WCAG 4.1.2, 2.1.1). |
+| `ada-accordions.js` | ADA Accordions (rewritten in 1.3.0) | GovArnex FAQ accordions: drives the question buttons that `faq-toggle-buttons.php` adds, one panel open at a time, `aria-expanded`/`aria-controls` always matching what's on screen. Stops GovArnex's own handler, which wouldn't close an open panel (WCAG 4.1.2). |
 | `ada-tables.js` | ADA Tables | TablePress tables: turns the table's heading into a screen-reader `caption`, adds `scope` to column headers, and makes each row's first cell a row header (WCAG 1.3.1). |
 | `skip-to-content.js` | Skip to Content | Adds a "Skip to main content" link that appears on focus and jumps to `.page-content` (WCAG 2.4.1). Uses the county's **Accent color**. |
 
