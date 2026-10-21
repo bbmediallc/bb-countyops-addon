@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		z-index: 10000;
 		background: #ffffff;
 		padding: 20px;
-		outline-color: #800000;
+		outline-color: {{accent_color}};
 		color: #000000;
 	}
 	
 	.skip-to-content:hover {
-		color: #800000;
+		color: {{accent_color}};
 	}
     
 	.skip-to-content:focus {

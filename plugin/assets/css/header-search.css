@@ -1,0 +1,9 @@
+.main-header-one__top-inner{width:100%;justify-content:flex-end}
+.main-header-one__top-left{display:flex;flex:1 1 auto;align-items:center;justify-content:flex-end;gap:16px}
+.main-header-one__top-left-menu a{white-space:nowrap}
+.main-header-one__top-left-menu a:focus-visible{outline:2px solid #ffffff;outline-offset:2px}
+.bb-header-template{max-width:320px;width:100%;min-width:0}
+.bb-header-template .elementor-section,.bb-header-template .e-con{max-width:100%}
+.bb-header-template .e-search-submit i{font-size:20px!important;width:20px!important;height:20px!important}
+.bb-header-template input:focus-visible,.bb-header-template button:focus-visible{outline:2px solid #ffffff;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.bb-header-template *{animation:none!important;transition:none!important}}

@@ -7,13 +7,7 @@ body.search-results .meta-box {
 }
 
 
-.page-breadcrumb,
-body.search .breadcrumb-style1__bg,
-body.search-results .breadcrumb-style1__bg{
-    background: url('https://wright.bandbdev.com/wp-content/uploads/2026/04/front-of-courthouse-updated.webp');
-    background-size: cover;
-    background-position: 50% 40%;
-}
+{{banner}}
 
 a.elementor-button.elementor-button-link {
     box-shadow: unset !important;
@@ -177,7 +171,7 @@ ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before {
 }
 
 .footer-area .elementor-heading-title a:hover {
-    color: #AF8C5D !important;
+    color: {{footer_link_hover}} !important;
 }
 
 .blog-standard__content ol, .blog-standard__content ul {
@@ -270,7 +264,7 @@ ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before {
 }
 
 .tablepress>:where(thead,tfoot)>*>th {
-    background-color: #800000;
+    background-color: {{accent_color}};
     color: #ffffff;
 }
 
@@ -365,7 +359,7 @@ p.gform_required_legend {
     transition: all 0.3s ease-in-out !important;
 }
 .services-style1__single:hover .services-style1__single-text {
-    background: #800000;
+    background: {{accent_color}};
     transition: all 0.2s ease-in-out !important;
 }
 
@@ -437,7 +431,7 @@ body.search-results .blog-standard .blog-style1__single-content{
     padding-bottom: 26px;
 }
 .acc-content a {
-    color: #8c0708;
+    color: {{link_color}};
     text-decoration: underline;
 }
 

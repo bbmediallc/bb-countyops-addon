@@ -1,0 +1,60 @@
+/* County Settings */
+
+.bbcoa-settings .bbcoa-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    padding: 4px 20px 12px;
+    margin: 16px 0;
+    max-width: 960px;
+}
+
+.bbcoa-settings .bbcoa-setup {
+    border-left: 4px solid #dba617;
+}
+
+.bbcoa-pill {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 10px;
+    background: #00a32a;
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.bbcoa-actions {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.bbcoa-actions form {
+    display: inline;
+}
+
+.bbcoa-color {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bbcoa-color input[type="color"] {
+    width: 36px;
+    height: 30px;
+    padding: 0 2px;
+}
+
+.bbcoa-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.bbcoa-image-preview img {
+    display: block;
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+    padding: 4px;
+    background: #f0f0f1;
+}
