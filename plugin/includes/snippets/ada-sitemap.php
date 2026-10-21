@@ -1,9 +1,10 @@
 <?php
 // ADA Sitemap (formerly Code Snippets: "ADA Sitemap").
 //
-// [ada_sitemap] shortcode: an accessible HTML sitemap of every published page
-// (nested by parent) and every post grouped by category. Pages using it get
-// an "ada-sitemap" body class and the list styles below.
+// [ada_sitemap] shortcode: an accessible HTML sitemap of every published page,
+// nested by parent. (Its "Posts by Category" section was removed in 1.4.1;
+// the collector sites don't use posts, so it was always empty.) Pages using
+// it get an "ada-sitemap" body class and the list styles below.
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -36,33 +37,6 @@ function bbcoa_ada_sitemap_shortcode() {
 
 		<h2>Pages</h2>
 		<?php echo bbcoa_ada_sitemap_tree(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped above. ?>
-
-		<hr>
-
-		<h2>Posts by Category</h2>
-
-		<?php
-		foreach ( get_categories( [ 'hide_empty' => true ] ) as $category ) {
-			echo '<section>';
-			echo '<h3>' . esc_html( $category->name ) . '</h3>';
-
-			$posts = get_posts( [
-				'category'    => $category->term_id,
-				'numberposts' => -1,
-				'post_status' => 'publish',
-			] );
-
-			if ( $posts ) {
-				echo '<ul>';
-				foreach ( $posts as $post ) {
-					echo '<li><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . esc_html( $post->post_title ) . '</a></li>';
-				}
-				echo '</ul>';
-			}
-
-			echo '</section>';
-		}
-		?>
 
 	</div>
 	<?php

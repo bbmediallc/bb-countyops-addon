@@ -132,7 +132,7 @@ Everything below runs on every county. "WCAG" references are to WCAG 2.1.
 
 | File | Was | What it does |
 |---|---|---|
-| `ada-sitemap.php` | ADA Sitemap | `[ada_sitemap]` shortcode: an accessible HTML sitemap of all published pages (nested) and posts by category, with its own list styles and an `ada-sitemap` body class. Its link color is `#800000` everywhere (Laclede too). |
+| `ada-sitemap.php` | ADA Sitemap | `[ada_sitemap]` shortcode: an accessible HTML sitemap of all published pages (nested). "Posts by Category" was removed in 1.4.1 (always empty), with its own list styles and an `ada-sitemap` body class. Its link color is `#800000` everywhere (Laclede too). |
 | `viewport-zoom.php` | Re-Enable Theme Pinch/Zoom | GovArnex's viewport tag blocks pinch-zoom, which fails WCAG 1.4.4 (Resize Text). Rewrites it to `width=device-width, initial-scale=1.0`. Side effects carried over as-is: removes WordPress's resource hints (dns-prefetch/preconnect), and unhooks `wp_no_robots` (deprecated, no-op). |
 | `elementor-link-options-open.php` | Keep Elementor Button Settings Open | Elementor editor only: keeps link options (new window, nofollow, attributes) visible instead of behind the gear icon. B&B Media Elementor Add-Ons does the same; both together is harmless. |
 | `icon-box-duplicate-links.php` | Fix Duplicate Elmentor Icon Links | A linked Icon Box links both the icon and the title. Hides the icon's link from screen readers and the tab order so there's one link (WCAG 2.4.4). |

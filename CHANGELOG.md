@@ -2,6 +2,12 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.4.1] - 2026-10-21
+
+### Removed
+- Sitemap: the "Posts by Category" section, which was empty on every county.
+  The sitemap now lists pages only.
+
 ## [1.4.0] - 2026-10-21
 
 ### Fixed
