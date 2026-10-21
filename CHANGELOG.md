@@ -2,6 +2,15 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.3.2] - 2026-10-21
+
+### Fixed
+- Table of Contents toggle (WCAG 4.1.2): the header was a focusable div with
+  no role, name or state, and the chevron buttons were unreachable. The title
+  now contains a real button with aria-expanded (still an H2), Enter and
+  Space work natively, clicking anywhere on the header toggles it once, and
+  the chevrons are decorative. Dashed black focus outline on the button.
+
 ## [1.3.1] - 2026-10-21
 
 ### Fixed

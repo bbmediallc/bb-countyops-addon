@@ -334,3 +334,7 @@ h6 a {
 /* FAQ question buttons (see includes/snippets/faq-toggle-buttons.php). */
 .accordion-box .acc-trigger{all:unset;cursor:pointer;display:block;width:100%}
 .accordion-box .acc-trigger:focus-visible{outline:3px dashed #000000;outline-offset:4px}
+
+/* Table of Contents toggle button (see assets/js/elementor-toc-header-link-fix.js). */
+.elementor-toc__header .elementor-toc__trigger{all:unset;cursor:pointer}
+.elementor-toc__header .elementor-toc__trigger:focus-visible{outline:3px dashed #000000;outline-offset:4px}

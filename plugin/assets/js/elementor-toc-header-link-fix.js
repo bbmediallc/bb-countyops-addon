@@ -1,46 +1,48 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-    document.querySelectorAll('.elementor-toc__header').forEach(function (header) {
-        const widget = header.closest('.elementor-widget-table-of-contents');
-        if (!widget) return;
-
-        header.style.cursor = 'pointer';
-        header.setAttribute('tabindex', '0');
-
-        header.querySelectorAll('.elementor-toc__toggle-button').forEach(function (btn) {
-            btn.setAttribute('tabindex', '-1');
-        });
-
-        function triggerToggle() {
-            const isCollapsed = widget.classList.contains('elementor-toc--collapsed');
-            const body = widget.querySelector('.elementor-toc__body');
-            const expandBtn = header.querySelector('.elementor-toc__toggle-button--expand');
-            const collapseBtn = header.querySelector('.elementor-toc__toggle-button--collapse');
-
-            if (isCollapsed) {
-                widget.classList.remove('elementor-toc--collapsed');
-                if (body) body.style.display = '';
-                if (expandBtn) expandBtn.setAttribute('aria-expanded', 'true');
-                if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                widget.classList.add('elementor-toc--collapsed');
-                if (body) body.style.display = 'none';
-                if (expandBtn) expandBtn.setAttribute('aria-expanded', 'false');
-                if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'false');
-            }
-        }
-
-        header.addEventListener('click', function (e) {
-            if (e.target.closest('.elementor-toc__toggle-button')) return;
-            triggerToggle();
-        });
-
-        header.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                triggerToggle();
-            }
-        });
+// Elementor Table of Contents: a real toggle button (WCAG 4.1.2).
+// Puts a <button class="elementor-toc__trigger"> inside the existing H2 title,
+// so the heading is kept and the control has a name, role and aria-expanded.
+// Clicking anywhere on the header bar still toggles it once. The chevron
+// buttons become decorative (not focusable, hidden from screen readers).
+//
+// The click listener runs in the capture phase and stops propagation, so
+// Elementor Pro's own handlers (bound to the chevron buttons) never fire and
+// can't double-toggle. Enter and Space work natively on the button. The
+// MutationObserver keeps aria-expanded right if Elementor collapses the box
+// itself, e.g. when the screen crosses the "minimized on" breakpoint.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.elementor-widget-table-of-contents').forEach(widget => {
+    const header = widget.querySelector('.elementor-toc__header');
+    const title = widget.querySelector('.elementor-toc__header-title');
+    const body = widget.querySelector('.elementor-toc__body');
+    if (!header || !title || !body) return;
+    if (!body.id) body.id = `elementor-toc__${widget.dataset.id}`;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'elementor-toc__trigger';
+    btn.setAttribute('aria-controls', body.id);
+    btn.textContent = title.textContent.trim();
+    title.textContent = '';
+    title.appendChild(btn);
+    header.removeAttribute('tabindex');
+    header.style.cursor = 'pointer';
+    header.querySelectorAll('.elementor-toc__toggle-button').forEach(t => {
+      t.setAttribute('tabindex', '-1');
+      t.setAttribute('aria-hidden', 'true');
+      t.removeAttribute('role');
+      t.removeAttribute('aria-label');
+      t.removeAttribute('aria-expanded');
+      t.removeAttribute('aria-controls');
     });
-
+    const isOpen = () => !widget.classList.contains('elementor-toc--collapsed');
+    const sync = () => btn.setAttribute('aria-expanded', String(isOpen()));
+    header.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = !isOpen();
+      widget.classList.toggle('elementor-toc--collapsed', !open);
+      body.style.display = open ? 'block' : 'none';
+      sync();
+    }, true);
+    new MutationObserver(sync).observe(widget, { attributes: true, attributeFilter: ['class'] });
+    sync();
+  });
 });
