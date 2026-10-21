@@ -1,0 +1,24 @@
+.mid-tax-payment .mid-tax-legal-fields {
+    max-width: unset !important;
+}
+
+.mid-tax-payment :is(a, button, input, select, textarea):focus-visible,
+    .nice-select.mid-tax-select:focus-visible{
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: 3px !important;
+}
+
+a.mid-tax-button.mid-tax-reset-button:hover,
+button.mid-tax-button.mid-tax-submit-button:hover {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+section.mid-tax-results a:hover {
+    color: #8b0103 !important;
+}
+
+h3.mid-tax-result-name {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+}

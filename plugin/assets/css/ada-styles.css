@@ -1,0 +1,333 @@
+a.custom-logo-link:focus-visible,
+#menu-primary-menu li a:focus-visible,
+.main-header-one__bottom-right-number a:focus-visible,
+.btn-one:focus-visible,
+.departments-details__sidebar-single-list li a:focus-visible,
+.page-content .elementor-widget-text-editor a:focus-visible,
+.mobile-nav__toggler:focus-visible,
+.features-style1__single-content h3 a:focus-visible,
+.features-style1__single-content span a:focus-visible,
+.services-style1__single-text h3 a:focus-visible,
+.btn-box a:focus-visible,
+.e-n-accordion-item-title:focus-visible{
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: 3px !important;
+}
+
+.form-control:focus-visible,
+.form-control:focus,
+.form-select:focus-visible,
+.form-select:focus,
+.btn-outline-secondary:focus-visible,
+.btn-primary:focus-visible {
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: 2px !important;
+    box-shadow: unset !important;
+    border-color: #ced4da !important;
+}
+
+
+.gform-body.gform_body input[type="text"]:focus-visible,
+.gform-body.gform_body input[type="tel"]:focus-visible,
+.gform-body.gform_body input[type="number"]:focus-visible,
+.gform-body.gform_body input[type="email"]:focus-visible,
+.gform-body.gform_body textarea:focus-visible,
+.gform-body.gform_body select:focus-visible,
+.elementor-toc__header:focus-visible{
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: -2px !important;
+}
+
+.gform_button.button:focus-visible,
+form a:focus-visible{
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: 2px !important;
+    border: unset !important;
+}
+
+#menu-primary-menu .sub-menu li a:focus-visible{
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: -5px !important;
+}
+
+.acc-btn:focus-visible {
+    outline: unset;
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: -5px !important;
+}
+
+#hero .elementor-button:focus-visible,
+.mobile-nav__content a:focus-visible,
+#page-content .elementor-button:focus-visible{
+    outline: 3px dashed #ffffff !important;
+    outline-offset: 3px !important;
+}
+
+#foot-logo a:focus-visible,
+.footer-area .elementor-heading-title a:focus-visible,
+.footer-area ul.elementor-icon-list-items li a:focus-visible,
+.copyright a:focus-visible,
+#page-sidebar p.elementor-icon-box-title a:focus-visible{
+    outline: 2px dashed #ffffff !important;
+    outline-offset: 3px !important;
+}
+
+span.mobile-nav__close.mobile-nav__toggler:focus-visible,
+.mobile-nav__content #menu-primary-menu li a:focus-visible,
+.mobile-nav__content #menu-primary-menu li a button:focus-visible{
+    outline: 2px dashed #fefefe !important;
+    outline-offset: 3px !important;
+}
+
+.main-menu .main-menu__list>li:focus-within>ul,
+.main-menu .main-menu__list>li>ul>li:focus-within>ul,
+.stricky-header .main-menu__list>li:focus-within>ul,
+.stricky-header .main-menu__list>li>ul>li:focus-within>ul {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: rotateX(0deg) !important;
+  transition: all 300ms ease !important;
+}
+
+summary.e-n-accordion-item-title:hover .e-n-accordion-item-title-text{
+    text-decoration: none !important;
+}
+
+form a {
+    color: #810003 !important;
+    text-decoration: underline !important;
+}
+
+form a:hover {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+/* =========================
+   ADA FONT SYSTEM
+========================= */
+
+/* Root scalable */
+html {
+  font-size: 100% !important;
+}
+
+/* Base body */
+body {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Reset common text elements */
+p,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select,
+button,
+.section-title-wrapper .section-description,
+.elementor-icon-list-text,
+.main-header-one__top a{
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.elementor-heading-title,
+.widget-title{
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+.elementor-widget-heading,
+.elementor-widget-container,
+.widget-title{
+  max-width: 100% !important;
+}
+
+.elementor-container,
+.e-con,
+.widget-title {
+  min-width: 0 !important;
+}
+
+span.img-left.me-3,
+span.img-right.ms-3 {
+    display: none !important;
+}
+
+.accordion-box .block .acc-btn h3 {
+    text-decoration: underline;
+    color: #8c0708;
+}
+
+.accordion-box .block .acc-btn h3:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* =========================
+   Heading Hierarchy
+========================= */
+
+h1,
+h1 a {
+  font-size: 4rem !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+}
+
+@media(max-width: 767px){
+    h1, h1 a {
+        font-size: 2.5rem !important;
+    }
+}
+
+.breadcrumb-style1__inner h2{
+  font-size: 3.2rem !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+}
+
+h2,
+h2 a {
+  font-size: 2.25rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+}
+
+h3,
+.quick-links h2,
+.features-style1__single-content span,
+h3 a,
+h2.elementor-toc__header-title {
+  font-size: 1.4rem !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+}
+
+h4,
+h4 a {
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+}
+
+h5,
+h5 a,
+.accordion-box .block .acc-btn h3{
+  font-size: 1.125rem !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+}
+
+h6,
+h6 a {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+}
+
+.e-n-accordion-item-title-header h2,
+.e-n-accordion-item-title-header h2 a,
+.e-n-accordion-item-title-header h3,
+.e-n-accordion-item-title-header h3 a,
+.e-n-accordion-item-title-header h4,
+.e-n-accordion-item-title-header h4 a,
+.e-n-accordion-item-title-header h5,
+.e-n-accordion-item-title-header h5 a,
+.e-n-accordion-item-title-header h6,
+.e-n-accordion-item-title-header h6 a {
+  font-size: 1.25rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+}
+
+/* =========================
+   Elementor Loop Headings
+========================= */
+
+[data-elementor-type="loop-item"] .elementor-heading-title,
+[data-elementor-type="loop-item"] .elementor-heading-title a {
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+}
+
+/* =========================
+   Feature Box Buttons
+========================= */
+
+.feature-box-title,
+.feature-box-title a {
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+}
+
+/* =========================
+   Elementor Buttons
+========================= */
+
+.elementor-button, .elementor-button .elementor-button-text, .btn-one {
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+
+.header-navbar-text-1 a {
+  font-size: 1rem !important;   /* 16px */
+  line-height: 1.4 !important;
+}
+
+/* =========================
+   Main Navigation
+========================= */
+
+#menu-primary-menu a,
+.quick-links a{
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Navigation Carets */
+.navbar-items .dropdown-toggle::after,
+.egovenz-main-menu .dropdown-toggle::after {
+  font-size: .75em !important;
+}
+
+/* =========================
+   Mobile Menu
+========================= */
+
+/* Top-level mobile links */
+.egovenz-mobile-menu > li > a.nav-link {
+  font-size: 1.125rem !important;
+  line-height: 1.5 !important;
+}
+
+/* First-level submenu links */
+.egovenz-mobile-menu .sub-menu > li > a.nav-link {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Deeper nested submenu links */
+.egovenz-mobile-menu .sub-menu .sub-menu a.nav-link {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Mobile plus/minus toggles */
+.egovenz-mobile-menu .zmm-dropdown-toggle {
+  font-size: 1em !important;
+}
+
+/* =========================
+   WP Admin Bar Exclusion
+========================= */
+
+#wpadminbar,
+#wpadminbar * {
+  font-size: 13px !important;
+}

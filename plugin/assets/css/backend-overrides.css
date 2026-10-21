@@ -1,0 +1,44 @@
+li#wp-admin-bar-support_link,
+li#wp-admin-bar-tribe-events,
+li#wp-admin-bar-gform-forms,
+li#wp-admin-bar-elementor_notes,
+li#wp-admin-bar-new-content,
+li#wp-admin-bar-customize,
+li#wp-admin-bar-wp-logo,
+#wp-admin-bar-command-palette,
+#wp-admin-bar-code-snippets,
+#wp-media-modal #alt-text-description {
+    display: none !important;
+}
+
+.media-frame-content .attachment-info .details:after {
+  content: "Remember to add ALT text to all images unless they are strictly background images or decorative elements (icons, etc). Use the alt text to describe the information or function represented by the image.\A\A Incorrect: photo of playground equipment.\A\A Correct: Accessible playground with slides, climbing structures, and shaded play areas designed for children of varying abilities.";
+  white-space: pre-line;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    background: #2371b1;
+    line-height: 1.4;
+    display: block;
+    max-width: 767px;
+    margin-top: 20px;
+}
+
+
+body.upload-php #wpbody-content .media-frame:before {
+  content: "Remember to add ALT text to all images unless they are strictly background images or decorative elements (icons, etc). Use the alt text to describe the information or function represented by the image.";
+  white-space: pre-line;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    background: #2371b1;
+    line-height: 1.4;
+    display: block;
+    margin-top: 10px;
+}
+
+
+.alt-text textarea, .attachment-details .alt-text textarea {
+    height: 150px;
+    border: solid 3px #2371b1;
+}
