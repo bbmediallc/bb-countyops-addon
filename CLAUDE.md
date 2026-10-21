@@ -13,3 +13,4 @@ change.
 - WP External Links rewrites `<a href>` in any output, including WP-CLI output; base64-encode data you export over SSH.
 - Releases reach sites only while the GitHub repo is public; Austin manages its visibility by hand. Never change it yourself, and don't remind him to.
 - Sister projects: BB Media Core (github.com/bbmediallc/bbmediacore) and B&B Media Elementor Add-Ons (github.com/bbmediallc/bb-elementor-addons). The updater is shared in design.
+- Never run `wp ... --context=admin` on these sites: Elementor Pro fatals in that mode, and WordPress then emails a "technical issue" notice to the admin address. Keep WP-CLI work read-only on Stoddard and Pulaski (live) unless Austin asks for a change.
