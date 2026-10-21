@@ -20,6 +20,7 @@ function bbcoa_activate() {
 			set_transient( 'bbcoa_setup_redirect', 1, 5 * MINUTE_IN_SECONDS );
 		}
 	}
+	bbcoa_sync_roles();
 	update_option( 'bbcoa_db_version', BBCOA_VERSION );
 }
 

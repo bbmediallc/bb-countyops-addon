@@ -89,6 +89,25 @@ Add the live address to the county's **Website addresses** (keep the staging
 one too). The site also remembers its county from activation, so forgetting
 this doesn't break anything; it just keeps things tidy.
 
+## County Admin role
+
+`includes/roles.php` defines the **County Admin** role (`county-admin`), the
+role county staff get. It was originally made by hand with User Role Editor
+on each site; the plugin now creates it where it's missing and keeps it in
+sync on every update, so User Role Editor isn't needed. Roles are stored in
+the WordPress database, so removing User Role Editor doesn't remove it.
+
+It's everything an Editor can do, plus: Gravity Forms (create/edit/delete
+forms, view/delete entries and notes), TablePress (all table screens), Yoast
+SEO (bulk edit, advanced metadata, SEO settings), Duplicate Post, The Events
+Calendar's Event Aggregator records, Appearance > Menus/Widgets
+(`edit_theme_options`) and **general settings (`manage_options`)**.
+
+To change it, edit `bbcoa_county_admin_caps()` and release an update. On
+update, sites gain any added permission and lose any removed one, but
+permissions other plugins add on their own (Wordfence's 2FA ones on the live
+sites) are never touched. Deleting the plugin leaves the role in place.
+
 ## What each piece does
 
 Everything below runs on every county. "WCAG" references are to WCAG 2.1.

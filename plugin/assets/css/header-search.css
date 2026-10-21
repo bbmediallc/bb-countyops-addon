@@ -1,9 +1,11 @@
 .main-header-one__top-inner{width:100%;justify-content:flex-end}
 .main-header-one__top-left{display:flex;flex:1 1 auto;align-items:center;justify-content:flex-end;gap:16px}
 .main-header-one__top-left-menu a{white-space:nowrap}
-.main-header-one__top-left-menu a:focus-visible{outline:2px solid #ffffff;outline-offset:2px}
+/* Dashed like the site's other focus outlines, but white: the usual #7f0003 maroon
+   doesn't show on the dark top bar (WCAG 1.4.11 needs 3:1 against it). */
+.main-header-one__top-left-menu a:focus-visible{outline:3px dashed #ffffff;outline-offset:3px}
 .bb-header-template{max-width:320px;width:100%;min-width:0}
-.bb-header-template input:focus-visible,.bb-header-template button:focus-visible{outline:2px solid #ffffff;outline-offset:2px}
+.bb-header-template input:focus-visible,.bb-header-template button:focus-visible{outline:3px dashed #ffffff;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.bb-header-template *{animation:none!important;transition:none!important}}
 
 /* The search form, matching Laclede's original Elementor search widget. */

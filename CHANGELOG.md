@@ -2,6 +2,20 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.2.0] - 2026-10-21
+
+### Added
+- County Admin role, built in. Created on any site that doesn't have it and
+  kept in sync on every update, so User Role Editor is no longer needed for
+  it. Same permissions as the hand-made role on all 7 collector sites (an
+  Editor plus Gravity Forms, TablePress, Yoast SEO, menus/widgets and
+  settings). Permissions other plugins add (e.g. Wordfence 2FA) are left
+  alone, and deleting the plugin leaves the role in place.
+
+### Changed
+- Header search: focus outlines are 3px dashed, like the rest of the site's,
+  in white so they show on the dark top bar (also the top bar menu links).
+
 ## [1.1.0] - 2026-10-21
 
 ### Changed
