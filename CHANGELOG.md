@@ -7,6 +7,8 @@ Each `## [version]` section becomes the release notes on GitHub.
 ### Added
 - County Ops Overrides: the CountyOps records status page
   (`.mid-tax-payment.mid-tax-records-status`) uses the full content width.
+- County Ops Overrides: CountyOps search titles
+  (`.mid-tax-payment .mid-tax-search-title`) are bold.
 
 ## [1.0.0] - 2026-10-21
 

@@ -22,6 +22,11 @@ h3.mid-tax-result-name {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
 }
+
 .mid-tax-payment.mid-tax-records-status {
     max-width: unset !important;
+}
+
+.mid-tax-payment .mid-tax-search-title {
+    font-weight: 700 !important;
 }
