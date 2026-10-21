@@ -3,7 +3,7 @@
  * Plugin Name: B&B Media CountyOps Addon
  * Plugin URI: https://github.com/bbmediallc/bb-countyops-addon
  * Description: Shared accessibility fixes, theme styling and features for B&B Media's county office websites (GovArnex theme + CountyOps). Each site picks its county under Dashboard > County Settings.
- * Version: 1.3.2
+ * Version: 1.4.0
  * Author: B&B Media, LLC
  * Author URI: https://bandbmedia.com/
  * Requires at least: 6.5
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Must match the Version header above. scripts/build.sh refuses to build
 // if they differ.
-define( 'BBCOA_VERSION', '1.3.2' );
+define( 'BBCOA_VERSION', '1.4.0' );
 define( 'BBCOA_FILE', __FILE__ );
 define( 'BBCOA_BASENAME', plugin_basename( __FILE__ ) );
 define( 'BBCOA_DIR', plugin_dir_path( __FILE__ ) );
@@ -51,10 +51,10 @@ require_once BBCOA_DIR . 'includes/snippets/ada-sitemap.php';
 require_once BBCOA_DIR . 'includes/snippets/viewport-zoom.php';
 require_once BBCOA_DIR . 'includes/snippets/elementor-link-options-open.php';
 require_once BBCOA_DIR . 'includes/snippets/icon-box-duplicate-links.php';
-require_once BBCOA_DIR . 'includes/snippets/mobile-menu-button.php';
 require_once BBCOA_DIR . 'includes/snippets/clickable-home-pods.php';
 require_once BBCOA_DIR . 'includes/snippets/faq-answer-editor.php';
 require_once BBCOA_DIR . 'includes/snippets/faq-toggle-buttons.php';
 require_once BBCOA_DIR . 'includes/snippets/header-search.php';
+require_once BBCOA_DIR . 'includes/snippets/logo-alt-text.php';
 
 register_activation_hook( __FILE__, 'bbcoa_activate' );

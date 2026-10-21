@@ -338,3 +338,13 @@ h6 a {
 /* Table of Contents toggle button (see assets/js/elementor-toc-header-link-fix.js). */
 .elementor-toc__header .elementor-toc__trigger{all:unset;cursor:pointer}
 .elementor-toc__header .elementor-toc__trigger:focus-visible{outline:3px dashed #000000;outline-offset:4px}
+
+/* Mobile menu submenu buttons (see assets/js/mobile-menu.js). Each button now
+   sits beside its link instead of inside it, so the theme's "a > button"
+   styles no longer apply; these restore the same look. The open arrow uses
+   the county's Accent color (#800000 on most counties). */
+.mobile-nav__content .main-menu__list li.menu-item-has-children{position:relative}
+.mobile-nav__content .main-menu__list li.menu-item-has-children > a{padding-right:40px}
+.mobile-nav__content .main-menu__list .mobile-nav__sub-toggle{position:absolute;top:8px;right:0;width:30px;height:30px;padding:0;border:0;background-color:#000000;color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;transform:rotate(-90deg);transition:transform 500ms}
+.mobile-nav__content .main-menu__list .mobile-nav__sub-toggle.expanded{transform:rotate(0deg);background-color:#ffffff;color:{{accent_color}}}
+.mobile-nav__content .main-menu__list .mobile-nav__sub-toggle:focus-visible,.mobile-nav__content .mobile-nav__close:focus-visible{outline:3px dashed #ffffff;outline-offset:2px}

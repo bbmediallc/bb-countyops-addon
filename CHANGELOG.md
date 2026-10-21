@@ -2,6 +2,27 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.4.0] - 2026-10-21
+
+### Fixed
+- Mobile menu (WCAG 2.4.3, 2.4.7, 4.1.2), now one script (`mobile-menu.js`)
+  instead of the theme plus four overlapping ones:
+  - Opening it puts focus on the visible close X, not an invisible 1px button.
+  - Focus stays inside the open menu; Escape, the X and the overlay close it
+    and return focus to the hamburger, whose aria-expanded follows.
+  - Submenu buttons sit beside their links, announced as "[Name] submenu"
+    with a working aria-expanded; parent links no longer claim a popup.
+  - No duplicate IDs, and no menu/menuitem roles without arrow-key support.
+  - Submenu buttons look the same as before (black/white arrow closed,
+    white/Accent color arrow open), with a dashed white focus outline.
+- Logo images were announced as "Logo" (GovArnex hard-codes it); they now use
+  the site's name, e.g. "Wright County Collector of Revenue" (WCAG 1.1.1).
+
+### Removed
+- Mobile Menu Tabbing, Injected Aria Labels, the Fix Mobile Menu Button
+  Issues snippet, and the mobile part of Aria Labels for Drop Downs (all
+  replaced by `mobile-menu.js`, which also keeps the scroll-to-top label).
+
 ## [1.3.2] - 2026-10-21
 
 ### Fixed
