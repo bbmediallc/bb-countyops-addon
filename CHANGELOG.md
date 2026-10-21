@@ -2,6 +2,15 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.0.2] - 2026-10-21
+
+### Fixed
+- Home page feature pods: keyboard focus showed two outlines (a dashed one
+  on the title link and one on the pod). Now there's a single solid maroon
+  (`#7f0003`) outline with rounded corners around the whole pod, nothing on
+  the title, and no outline on mouse clicks. Removed the title link's focus
+  rule from ADA Styles; the pod's focus styles live in Clickable Home Pods.
+
 ## [1.0.1] - 2026-10-21
 
 ### Added

@@ -103,7 +103,7 @@ Everything below runs on every county. "WCAG" references are to WCAG 2.1.
 | `elementor-link-options-open.php` | Keep Elementor Button Settings Open | Elementor editor only: keeps link options (new window, nofollow, attributes) visible instead of behind the gear icon. B&B Media Elementor Add-Ons does the same; both together is harmless. |
 | `icon-box-duplicate-links.php` | Fix Duplicate Elmentor Icon Links | A linked Icon Box links both the icon and the title. Hides the icon's link from screen readers and the tab order so there's one link (WCAG 2.4.4). |
 | `mobile-menu-button.php` | Fix Mobile Menu Button Issues | Gives the mobile menu opener `role="button"`, a label, `aria-controls` and a live `aria-expanded`; Space opens/closes it; hides the overlay from screen readers (WCAG 4.1.2, 2.1.1). |
-| `clickable-home-pods.php` | Clickable Home Pods | Makes the whole GovArnex Features box ("home pod") clickable and draws the focus outline around the whole box (WCAG 2.4.7). |
+| `clickable-home-pods.php` | Clickable Home Pods | Makes the whole GovArnex Features box ("home pod") clickable. Keyboard focus is one solid maroon outline around the whole pod, none on the title link, none on mouse clicks (WCAG 2.4.7). Don't add a title-link focus outline in ADA Styles, or keyboard users see two. |
 | `faq-answer-editor.php` | Govarnex FAQ Answer WYSIWYG Editor | GovArnex FAQ widget: rich text editor for answers instead of a plain box, panel items labeled by question, and empty paragraphs hidden. |
 | `header-search.php` | Add Search to Header (Laclede) | The **Search in header** county setting. Renders the county's Elementor search template and inserts it after the header's top-left menu. Styles in `assets/css/header-search.css`. |
 
