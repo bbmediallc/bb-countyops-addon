@@ -296,6 +296,7 @@ p.gform_required_legend {
     font-size: 18px !important;
     font-weight: 700 !important;
     background: {{accent_color}} !important;
+    line-height: 1 !important;
     transition: all 0.3s ease-in-out 0.1s;
 }
 

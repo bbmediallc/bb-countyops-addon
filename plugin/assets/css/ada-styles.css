@@ -63,6 +63,16 @@ form a:focus-visible{
     outline-offset: 3px !important;
 }
 
+/* Elementor buttons in page content. The white rule above is for the home
+   page banner (its container's CSS ID is page-content), but Skip to Content
+   also gives every page's content wrapper that ID, which made content buttons
+   white-on-white. Everywhere but the home page they get the Accent color. */
+body:not(.home) #page-content .elementor-button:focus-visible,
+body:not(.home) .page-content .elementor-button:focus-visible{
+    outline: 3px dashed {{accent_color}} !important;
+    outline-offset: 3px !important;
+}
+
 #foot-logo a:focus-visible,
 .footer-area .elementor-heading-title a:focus-visible,
 .footer-area ul.elementor-icon-list-items li a:focus-visible,

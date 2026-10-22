@@ -2,6 +2,18 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.4] - 2026-10-22
+
+### Fixed
+- Elementor buttons in page content had a white focus outline on a white
+  page (WCAG 2.4.7). The white outline is meant for the home page banner,
+  whose container has the CSS ID page-content, but Skip to Content gives
+  every page's content wrapper that ID too. Outside the home page they now
+  get the 3px dashed Accent color outline like other links and buttons.
+
+### Changed
+- Gravity Forms Submit buttons: line-height 1.
+
 ## [1.5.3] - 2026-10-22
 
 ### Changed

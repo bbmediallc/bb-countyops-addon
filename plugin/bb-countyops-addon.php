@@ -3,7 +3,7 @@
  * Plugin Name: B&B Media CountyOps Addon
  * Plugin URI: https://github.com/bbmediallc/bb-countyops-addon
  * Description: Shared accessibility fixes, theme styling and features for B&B Media's county office websites (GovArnex theme + CountyOps). Each site picks its county under Dashboard > County Settings.
- * Version: 1.5.3
+ * Version: 1.5.4
  * Author: B&B Media, LLC
  * Author URI: https://bandbmedia.com/
  * Requires at least: 6.5
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Must match the Version header above. scripts/build.sh refuses to build
 // if they differ.
-define( 'BBCOA_VERSION', '1.5.3' );
+define( 'BBCOA_VERSION', '1.5.4' );
 define( 'BBCOA_FILE', __FILE__ );
 define( 'BBCOA_BASENAME', plugin_basename( __FILE__ ) );
 define( 'BBCOA_DIR', plugin_dir_path( __FILE__ ) );
