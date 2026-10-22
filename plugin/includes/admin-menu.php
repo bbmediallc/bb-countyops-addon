@@ -3,8 +3,8 @@
 //
 // The same 22 menus and 107 submenus Hide Admin Menu hid for the County
 // Admin role on Stoddard and Pulaski (identical on both), removed the same
-// way: remove_menu_page() / remove_submenu_page() on admin_menu at priority
-// 9999, for any user who has the county-admin role. Administrators are
+// way: remove_menu_page() / remove_submenu_page() on admin_menu (now at
+// PHP_INT_MAX, after every plugin has added its items), for any user who has the county-admin role. Administrators are
 // unaffected. Slugs are exactly as Hide Admin Menu stored them (including
 // its &#038; and &amp; encodings), since that's what it matched against.
 //
@@ -59,6 +59,11 @@ function bbcoa_county_admin_hidden_submenus() {
 	return [
 		// Added in 1.5.0.
 		'index.php' => [
+			'update-core.php',
+		],
+		// BB Media Core replaces the Dashboard menu with its own "custom_dashboard"
+		// menu, and Updates sits under that. index.php stays in case it's off.
+		'custom_dashboard' => [
 			'update-core.php',
 		],
 		'tablepress' => [
@@ -238,7 +243,9 @@ function bbcoa_hide_county_admin_menus() {
 		}
 	}
 }
-add_action( 'admin_menu', 'bbcoa_hide_county_admin_menus', 9999 );
+// PHP_INT_MAX: TablePress Premium's "Upgrade" item comes from its Freemius SDK,
+// which adds menu items at priority 999999999.
+add_action( 'admin_menu', 'bbcoa_hide_county_admin_menus', PHP_INT_MAX );
 
 function bbcoa_is_county_admin() {
 	return in_array( 'county-admin', (array) wp_get_current_user()->roles, true );

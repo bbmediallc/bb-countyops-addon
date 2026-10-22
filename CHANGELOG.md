@@ -2,6 +2,16 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.1] - 2026-10-21
+
+### Fixed
+- County Admin still saw Dashboard > Updates: on these sites Updates sits
+  under BB Media Core's "custom_dashboard" menu, not index.php. Both are now
+  covered.
+- County Admin still saw TablePress > Upgrade: TablePress Premium's Freemius
+  SDK adds it at admin_menu priority 999999999, after the hiding ran. Hiding
+  now runs at PHP_INT_MAX.
+
 ## [1.5.0] - 2026-10-21
 
 ### Changed
