@@ -133,3 +133,186 @@ h3.mid-tax-result-name {
 .mid-tax-payment-checkbox{
     accent-color: {{accent_color}} !important;
 }
+
+/* Search Records landing (CountyOps' mid-tax-search-landing.css): the site's
+   fonts and black text, cards styled like the Quick Links box, and the
+   county's Accent color wherever CountyOps used blue. */
+.mid-tax-search-landing,
+.mid-tax-search-landing p,
+.mid-tax-search-landing .mid-tax-landing-card,
+.mid-tax-search-landing .mid-tax-landing-card p{
+    font-family: "DM Sans", sans-serif !important;
+    color: #000000 !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-title,
+.mid-tax-search-landing .mid-tax-landing-additional,
+.mid-tax-search-landing .mid-tax-landing-card-title{
+    font-family: Poppins, sans-serif !important;
+    color: #000000 !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-title{
+    font-size: 36px !important;
+    line-height: 1.25 !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-additional{
+    font-size: 1.4rem !important;
+    margin-top: 40px !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-card-title{
+    font-size: 1.25rem !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-secondary .mid-tax-landing-card-title{
+    font-size: 1.1rem !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-grid{
+    gap: 20px !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-card,
+.mid-tax-search-landing .mid-tax-landing-secondary .mid-tax-landing-card{
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 15px !important;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, .07) !important;
+    padding: 25px !important;
+    transition: border-color .3s ease-in-out;
+}
+
+.mid-tax-search-landing .mid-tax-landing-secondary .mid-tax-landing-card{
+    padding: 18px 25px !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-card svg{
+    color: {{accent_color}} !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-card:hover{
+    background: #ffffff !important;
+    border-color: {{accent_color}} !important;
+}
+
+.mid-tax-search-landing a:focus,
+.mid-tax-search-landing a:focus-visible{
+    outline: 3px dashed {{accent_color}} !important;
+    outline-offset: 3px !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-freshness{
+    border-top-color: #e5e5e5 !important;
+}
+
+.mid-tax-search-landing .mid-tax-landing-freshness a{
+    color: {{accent_color}} !important;
+    font-weight: 700 !important;
+}
+
+/* CountyOps' blue elsewhere (search, results, bill and checkout screens):
+   dashed Accent color focus outlines, Accent color borders, links and
+   checkboxes, light Accent tints for its pale blue panels, and black for its
+   near-black navy text. Gray borders are left alone. */
+.mid-tax-payment .mid-tax-legal-select:focus-visible,
+.mid-tax-payment .mid-tax-gis-link:focus-visible,
+.mid-tax-payment .mid-tax-receipt-action:focus-visible,
+.mid-tax-payment-checkbox:focus-visible,
+.mid-tax-review-continue button:focus-visible,
+.mid-tax-detail-payment button:focus-visible,
+.mid-tax-selection-bar button:focus-visible,
+.mid-tax-checkout-acknowledgment input:focus-visible,
+.mid-tax-forte-status:focus-visible,
+.mid-tax-forte-launch:focus-visible,
+.mid-tax-payment .mid-tax-view-bill:focus-visible,
+.mid-tax-payment .mid-tax-back-results:focus-visible,
+.mid-tax-payment .mid-tax-email-results:focus-visible{
+    outline: 3px dashed {{accent_color}} !important;
+    outline-offset: 3px !important;
+}
+
+.mid-tax-selection-sticky,
+.mid-tax-checkout-action-panel,
+.mid-tax-checkout-sticky{
+    border-color: {{accent_color}} !important;
+}
+
+.mid-tax-checkout-acknowledgment input{
+    accent-color: {{accent_color}} !important;
+}
+
+.mid-tax-payment .mid-tax-gis-link{
+    border-color: {{accent_color}} !important;
+    color: {{accent_color}} !important;
+}
+
+.mid-tax-payment .mid-tax-gis-link:hover{
+    color: #000000 !important;
+}
+
+.mid-tax-payment .mid-tax-location-option:hover,
+.mid-tax-payment .mid-tax-location-option-active{
+    outline-color: {{accent_color}} !important;
+}
+
+.mid-tax-external-payment-note{
+    border-left-color: {{accent_color}} !important;
+}
+
+.mid-tax-status-nopay,
+.mid-tax-status-nopaypartial,
+.mid-tax-forte-status-ready,
+.mid-tax-forte-status-launching,
+.mid-tax-forte-status-progress,
+.mid-tax-forte-status-verifying,
+.mid-tax-forte-status-awaiting,
+.mid-tax-payment .mid-tax-location-source{
+    color: {{accent_color}} !important;
+}
+
+.mid-tax-forte-status-ready,
+.mid-tax-forte-status-launching,
+.mid-tax-forte-status-progress,
+.mid-tax-forte-status-verifying,
+.mid-tax-forte-status-awaiting{
+    border-color: {{accent_color}} !important;
+}
+
+/* Pale blue panels and badges become a pale tint of the Accent color. */
+.mid-tax-status-nopay,
+.mid-tax-status-nopaypartial,
+.mid-tax-payment .mid-tax-gis-link,
+.mid-tax-payment .mid-tax-current-balance > div:first-child,
+.mid-tax-payment .mid-tax-credit-equation > div.mid-tax-credit-amount-due,
+.mid-tax-selection-bar,
+.mid-tax-checkout-action-panel,
+.mid-tax-forte-checkout,
+.mid-tax-forte-status-ready,
+.mid-tax-forte-status-launching,
+.mid-tax-forte-status-progress,
+.mid-tax-forte-status-verifying,
+.mid-tax-forte-status-awaiting,
+.mid-tax-provider-review,
+.mid-tax-external-payment-note,
+.mid-tax-payment .mid-tax-location-group,
+.mid-tax-payment .mid-tax-location-source,
+.mid-tax-assessor-table th{
+    background: #f7f7f7 !important;
+    background: color-mix(in srgb, {{accent_color}} 6%, #ffffff) !important;
+}
+
+.mid-tax-payment .mid-tax-gis-link:hover,
+.mid-tax-payment .mid-tax-location-option:hover,
+.mid-tax-payment .mid-tax-location-option-active{
+    background: #efefef !important;
+    background: color-mix(in srgb, {{accent_color}} 12%, #ffffff) !important;
+}
+
+.mid-tax-external-payment-note,
+.mid-tax-payment .mid-tax-location-group-header h4,
+.mid-tax-assessor,
+.mid-tax-assessor-table th{
+    color: #000000 !important;
+}

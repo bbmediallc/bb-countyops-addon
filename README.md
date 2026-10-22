@@ -184,7 +184,7 @@ so the cascade is unchanged: every script first, then the CSS (see
 
 | File | Was | What it does |
 |---|---|---|
-| `county-ops-overrides.css` | County Ops Overrides | CountyOps tax search/payment forms: visible focus outlines, button hover colors, result name size, and CountyOps' own maroon replaced with the county's Accent color (red status/error text left alone). |
+| `county-ops-overrides.css` | County Ops Overrides | CountyOps tax search/payment forms: visible focus outlines, button hover colors, result name size, CountyOps' own maroon and blue replaced with the county's Accent color (red status/error text left alone), and the Search Records landing restyled to match the site. |
 | `backend-overrides.css` | Backend Overrides | wp-admin (and front-end toolbar): hides unused toolbar items and the media modal's alt-text hint, and shows a large "Remember to add ALT text" reminder in the media library. |
 | `ada-styles.css` | ADA Styles | Focus-visible outlines, contrast and underline fixes across the theme, widgets and forms. |
 | `theme-overrides.css` | Theme Overrides | GovArnex look-and-feel fixes: header/logo sizing, menus, banner, footer, buttons, TablePress, service cards, accordions, search results, and Laclede's "Missouri County Collector Websites" table (scoped to that page's widget). Uses the county's colors and banner. Prints last so it wins ties. |

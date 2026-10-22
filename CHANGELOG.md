@@ -2,6 +2,20 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.5] - 2026-10-22
+
+### Changed
+- County Ops Overrides: the Search Records landing page now matches the rest
+  of the site: Poppins headings and DM Sans text in black, white cards with
+  15px corners and the Quick Links box shadow, Accent color icons, hover
+  border and "Data Last Updated" link, and a 3px dashed Accent color focus
+  outline on the cards.
+- County Ops Overrides: CountyOps' remaining blue is now the county's Accent
+  color: focus outlines (now dashed), the GIS link, sticky selection and
+  checkout borders, checkout checkboxes, location options, payment status and
+  "no payment due" badges, and the external payment note. Its pale blue
+  panels use a pale Accent tint, and its near-black navy text is black.
+
 ## [1.5.4] - 2026-10-22
 
 ### Fixed
