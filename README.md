@@ -203,7 +203,7 @@ them. They print after this plugin's CSS, so they still override it.
 | Site | Kept on the site |
 |---|---|
 | Laclede | Logo sizing (sticky header max-width, top margins on tablet/phone). TextMyGov widget. |
-| Stoddard | Tax payment form styles ("Max Impact Forms"). TextMyGov widget. Customizer: hide scroll-to-top on tax pages. |
+| Stoddard | TextMyGov widget. Customizer: hide scroll-to-top on tax pages. (Its tax payment form styles moved into County Ops Overrides in 1.5.2.) |
 | Pulaski | Its search page banner (search results only; the others also cover the page header). |
 
 Two leftover rules were never actually in effect (a later shared rule
@@ -213,7 +213,8 @@ looking exactly the same:
 - Laclede: the tablet/phone logo widths (160px/130px). The shared
   `width: 290px !important` wins.
 - Stoddard: `line-height: 1.4` on the tax payment submit button. The shared
-  `line-height: 1` wins.
+  `line-height: 1` wins. (Those styles are in County Ops Overrides since 1.5.2,
+  still without that line-height.)
 
 ## Releasing a change
 

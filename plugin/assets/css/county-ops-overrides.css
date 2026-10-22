@@ -32,3 +32,46 @@ h3.mid-tax-result-name {
 }
 
 .elementor-widget-shortcode:has(.mid-tax-payment){width:100%}
+
+/* Tax search results and payment screens (from Stoddard's "Max Impact Forms"
+   CSS, now on every county). Kept after the CountyOps focus rule above so these
+   focus styles win, as they did on Stoddard. */
+.mid-tax-result-actions a:focus-visible,
+.mid-tax-back-link a:focus-visible{
+    outline: 3px dashed #7f0003 !important;
+    outline-offset: 2px !important;
+    box-shadow: unset !important;
+}
+
+.mid-tax-back-link a:hover{
+    color: #7f0003 !important;
+    text-decoration: underline;
+}
+
+.mid-tax-result-actions a,
+.mid-tax-reset-button,
+.mid-tax-submit-button,
+.payment-form [type=submit]{
+    font-size: 1rem !important;
+}
+
+/* Not .payment-form [type=submit]: Theme Overrides gives it line-height: 1
+   !important, which won on Stoddard too. */
+.mid-tax-result-actions a,
+.mid-tax-reset-button,
+.mid-tax-submit-button{
+    line-height: 1.4 !important;
+}
+
+.mid-tax-payment .form-text,
+.mid-tax-account,
+.mid-tax-status,
+.mid-tax-totals-grid span,
+.mid-tax-totals-grid dt{
+    font-size: .875em !important;
+}
+
+.mid-tax-totals-grid strong,
+.mid-tax-totals-grid dd{
+    font-size: 1.25em !important;
+}

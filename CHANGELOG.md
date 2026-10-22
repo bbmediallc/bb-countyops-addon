@@ -2,6 +2,15 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.2] - 2026-10-22
+
+### Changed
+- County Ops Overrides: Stoddard's tax search results and payment screen
+  styles now apply to every county: dashed maroon focus outline on result
+  actions and the back link, back link hover, 1rem buttons with 1.4 line
+  height (payment submit stays at 1), and sized totals text. Stoddard's own
+  copy ("Stoddard Overrides") is no longer needed.
+
 ## [1.5.1] - 2026-10-21
 
 ### Fixed
