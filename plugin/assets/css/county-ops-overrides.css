@@ -30,3 +30,5 @@ h3.mid-tax-result-name {
 .mid-tax-payment .mid-tax-search-title {
     font-weight: 700 !important;
 }
+
+.elementor-widget-shortcode:has(.mid-tax-payment){width:100%}

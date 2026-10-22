@@ -2,6 +2,12 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.4.4] - 2026-10-21
+
+### Changed
+- County Ops Overrides: Shortcode widgets holding a CountyOps form
+  (`.elementor-widget-shortcode:has(.mid-tax-payment)`) take the full width.
+
 ## [1.4.3] - 2026-10-21
 
 ### Changed
