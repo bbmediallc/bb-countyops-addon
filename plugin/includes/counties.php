@@ -21,7 +21,7 @@ function bbcoa_county_fields() {
 		'name'                   => [ 'section' => 'general', 'type' => 'text', 'label' => 'County name', 'help' => 'For your reference, e.g. "Wright County Collector".' ],
 		'site_urls'              => [ 'section' => 'general', 'type' => 'urls', 'label' => 'Website addresses', 'help' => 'One per line, e.g. wright.bandbdev.com. List both the staging and live address so the switch to live just works. A site with no county chosen uses the county whose address matches.' ],
 
-		'accent_color'           => [ 'section' => 'colors', 'type' => 'color', 'label' => 'Accent color', 'default' => '#800000', 'help' => 'Table header background, service card hover, skip-to-content link outline and hover.' ],
+		'accent_color'           => [ 'section' => 'colors', 'type' => 'color', 'label' => 'Accent color', 'default' => '#800000', 'help' => 'Table header background, service card hover, FAQ question text, skip-to-content link outline and hover.' ],
 		'link_color'             => [ 'section' => 'colors', 'type' => 'color', 'label' => 'Accordion link color', 'default' => '#8c0708', 'help' => 'Links inside accordion (FAQ) answers.' ],
 		'footer_link_hover'      => [ 'section' => 'colors', 'type' => 'color', 'label' => 'Footer link hover color', 'default' => '#AF8C5D', 'help' => 'Footer heading links on hover.' ],
 

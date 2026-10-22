@@ -62,7 +62,7 @@ code runs with the default colors and no banner or header search.
 |---|---|---|
 | County name | | Label only. |
 | Website addresses | | One per line. List staging **and** live, e.g. `wright.bandbdev.com` and `wrightcountycollector.com`. |
-| Accent color | `#800000` | TablePress table header background, service card hover background, skip-to-content link outline and hover. |
+| Accent color | `#800000` | TablePress table header background, service card hover background, FAQ question text, mobile submenu button (open), header search button, skip-to-content link outline and hover. |
 | Accordion link color | `#8c0708` | Links inside accordion/FAQ answers. |
 | Footer link hover color | `#AF8C5D` | Footer heading links on hover. |
 | Banner image | none | Background of the page header banner (`.page-breadcrumb`) and the search results header. Stored as `/wp-content/uploads/...` when it's on the same site, so it survives the move from staging to live. |

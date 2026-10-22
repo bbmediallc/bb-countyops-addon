@@ -2,6 +2,12 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.4.3] - 2026-10-21
+
+### Changed
+- FAQ question text uses the county's Accent color instead of a hard-coded
+  #8c0708, so it follows each county (#800000 on most, Laclede's own maroon).
+
 ## [1.4.2] - 2026-10-21
 
 ### Fixed

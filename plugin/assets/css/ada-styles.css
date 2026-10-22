@@ -161,7 +161,7 @@ span.img-right.ms-3 {
 
 .accordion-box .block .acc-btn h3 {
     text-decoration: underline;
-    color: #8c0708;
+    color: {{accent_color}};
 }
 
 .accordion-box .block .acc-btn h3:hover {
