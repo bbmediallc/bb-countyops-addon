@@ -2,6 +2,19 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.0] - 2026-10-21
+
+### Changed
+- County Admin now also has hidden and blocked (403): Link Checker (and its
+  "Local [old]" page), Dashboard > Updates, TablePress Plugin Options,
+  Modules, About and Upgrade, and every Customizer link under Appearance
+  (Customize, Background). Customize and Updates are gone from the top admin
+  bar. Blocking runs first thing on each admin screen.
+- County Admin no longer sees the theme's "required or recommended plugins"
+  notice, Enable Media Replace's "New Beta Feature" box, Disable Comments'
+  survey notice, or the WP Mail SMTP dashboard widget. The Media Library's
+  "Remember to add ALT text" reminder still shows.
+
 ## [1.4.4] - 2026-10-21
 
 ### Changed

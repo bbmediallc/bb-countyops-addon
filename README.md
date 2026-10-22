@@ -118,9 +118,18 @@ Customize. Unlike Hide Admin Menu, the hidden screens are also **blocked**:
 opening one by its address shows "Sorry, you are not allowed to access this
 page." Administrators are never affected.
 
-What County Admins keep: Dashboard, Pages (and editing with Elementor),
-Media, Forms, TablePress, Appearance > Menus and Widgets, their Profile, and
-Wordfence Login Security on the live sites.
+What County Admins keep: Dashboard (main screen), Pages (and editing with
+Elementor), Media, Forms, TablePress (All Tables, Add New Table, Import,
+Export), Appearance > Menus and Widgets, their Profile, and Wordfence Login
+Security on the live sites.
+
+Added in 1.5.0 after testing on Wright: Link Checker, Dashboard > Updates,
+TablePress's Options/Modules/About/Upgrade pages and every Customizer link
+under Appearance are hidden and blocked; Customize and Updates are removed
+from the top admin bar; and County Admins don't see the theme's TGMPA plugin
+notice, Enable Media Replace's beta box, Disable Comments' survey notice or
+the WP Mail SMTP dashboard widget. (The last two notices are removed by their
+wording, since neither plugin offers a switch for them alone.)
 
 To change it, edit the two lists in `admin-menu.php` and release an update.
 

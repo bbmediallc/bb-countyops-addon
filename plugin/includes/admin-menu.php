@@ -9,8 +9,17 @@
 // its &#038; and &amp; encodings), since that's what it matched against.
 //
 // The hidden screens are also blocked: opening one by its address gets
-// WordPress's usual "Sorry, you are not allowed to access this page."
-// (Hide Admin Menu only removed the links.)
+// WordPress's usual "Sorry, you are not allowed to access this page." with a
+// 403. (Hide Admin Menu only removed the links.)
+//
+// Added after testing on Wright (1.5.0): Link Checker, Dashboard > Updates,
+// TablePress's Options/Modules/About/Upgrade pages, every Customizer link
+// under Appearance (Customize, Background), Customize/Updates in the top
+// admin bar, and a few plugin notices County Admins shouldn't see.
+//
+// What County Admins keep: Dashboard (main screen), Pages, Media, Forms,
+// TablePress (All Tables, Add New Table, Import, Export), Appearance > Menus
+// and Widgets, and Profile.
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -40,12 +49,25 @@ function bbcoa_county_admin_hidden_menus() {
 		'wp-mail-smtp',
 		'snippets',
 		'elementor',
+		// Added in 1.5.0.
+		'blc_dash', // Broken Link Checker.
 	];
 }
 
 // Parent menu slug => submenu slugs to hide under it.
 function bbcoa_county_admin_hidden_submenus() {
 	return [
+		// Added in 1.5.0.
+		'index.php' => [
+			'update-core.php',
+		],
+		'tablepress' => [
+			'tablepress_options',
+			'tablepress_modules',
+			'tablepress_about',
+			'tablepress-pricing',
+		],
+		// From Hide Admin Menu (plus a few marked 1.5.0).
 		'edit-tags.php?taxonomy=link_category' => [
 			'edit-tags.php?taxonomy=link_category',
 		],
@@ -137,6 +159,7 @@ function bbcoa_county_admin_hidden_submenus() {
 		'blc_dash' => [
 			'blc_dash',
 			'plugins_cross_sell',
+			'blc_local', // 1.5.0: Link Checker's "Local [old]" page.
 		],
 		'sg-cachepress' => [
 			'sg-cachepress',
@@ -194,7 +217,7 @@ function bbcoa_county_admin_hidden_submenus() {
 
 function bbcoa_hide_county_admin_menus() {
 	global $submenu;
-	if ( ! in_array( 'county-admin', (array) wp_get_current_user()->roles, true ) ) {
+	if ( ! bbcoa_is_county_admin() ) {
 		return;
 	}
 	foreach ( bbcoa_county_admin_hidden_menus() as $slug ) {
@@ -202,16 +225,74 @@ function bbcoa_hide_county_admin_menus() {
 	}
 	foreach ( bbcoa_county_admin_hidden_submenus() as $parent => $children ) {
 		foreach ( $children as $child ) {
-			// Hide Admin Menu's quirk, kept so the menu matches: hiding any
-			// Customizer link under Appearance also removes Customize itself.
-			if ( 'themes.php' === $parent && 'customize.php' === wp_parse_url( $child, PHP_URL_PATH ) ) {
-				unset( $submenu['themes.php'][6] );
-			}
 			remove_submenu_page( $parent, $child );
+		}
+	}
+	// Every Customizer link under Appearance (Customize, and Background on
+	// themes that send it to the Customizer), whatever its position.
+	if ( ! empty( $submenu['themes.php'] ) ) {
+		foreach ( $submenu['themes.php'] as $i => $item ) {
+			if ( isset( $item[2] ) && 0 === strpos( $item[2], 'customize.php' ) ) {
+				unset( $submenu['themes.php'][ $i ] );
+			}
 		}
 	}
 }
 add_action( 'admin_menu', 'bbcoa_hide_county_admin_menus', 9999 );
+
+function bbcoa_is_county_admin() {
+	return in_array( 'county-admin', (array) wp_get_current_user()->roles, true );
+}
+
+// Top admin bar: no Customize or Updates.
+function bbcoa_county_admin_bar( $bar ) {
+	if ( bbcoa_is_county_admin() ) {
+		$bar->remove_node( 'customize' );
+		$bar->remove_node( 'updates' );
+	}
+}
+add_action( 'admin_bar_menu', 'bbcoa_county_admin_bar', 999 );
+
+// Plugin notices County Admins shouldn't see. (The Media Library's "Remember
+// to add ALT text" reminder is CSS in backend-overrides.css and stays.)
+
+// The theme's TGMPA "required or recommended plugins" notice: require a
+// capability County Admins don't have.
+function bbcoa_county_admin_tgmpa_capability( $capability ) {
+	return bbcoa_is_county_admin() ? 'install_plugins' : $capability;
+}
+add_filter( 'tgmpa_show_admin_notice_capability', 'bbcoa_county_admin_tgmpa_capability' );
+
+// WP Mail SMTP's dashboard widget.
+function bbcoa_county_admin_dashboard_widgets() {
+	if ( bbcoa_is_county_admin() ) {
+		remove_meta_box( 'wp_mail_smtp_reports_widget_lite', 'dashboard', 'normal' );
+	}
+}
+add_action( 'wp_dashboard_setup', 'bbcoa_county_admin_dashboard_widgets', 999 );
+
+// Enable Media Replace's "New Beta Feature" box and Disable Comments' "help
+// make Disable Comments even better" survey. Neither plugin has a setting or
+// hook for these alone (their notice systems also carry messages County
+// Admins need, like "file replaced"), so these two are removed by their
+// wording, for County Admins only.
+function bbcoa_county_admin_hide_notices() {
+	if ( ! bbcoa_is_county_admin() ) {
+		return;
+	}
+	?>
+	<script>
+	(function () {
+		var phrases = ['New Beta Feature!', 'help make Disable Comments even better'];
+		document.querySelectorAll('.notice, .updated, .error, .update-nag, [class*="notice"]').forEach(function (el) {
+			var text = el.textContent || '';
+			if (phrases.some(function (p) { return text.indexOf(p) !== -1; })) el.remove();
+		});
+	})();
+	</script>
+	<?php
+}
+add_action( 'admin_footer', 'bbcoa_county_admin_hide_notices' );
 
 // Every hidden menu/submenu as [ path, [ query args ] ], e.g. "edit.php"
 // with no args (Posts) or "admin.php" with [ 'page' => 'wpseo_dashboard' ].
@@ -272,11 +353,11 @@ function bbcoa_is_blocked_screen( $pagenow, $request ) {
 
 function bbcoa_block_county_admin_screens() {
 	global $pagenow;
-	if ( wp_doing_ajax() || ! in_array( 'county-admin', (array) wp_get_current_user()->roles, true ) ) {
+	if ( wp_doing_ajax() || ! bbcoa_is_county_admin() ) {
 		return;
 	}
 	if ( bbcoa_is_blocked_screen( $pagenow, $_GET ) ) {
 		wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403, 'back_link' => true ] );
 	}
 }
-add_action( 'admin_init', 'bbcoa_block_county_admin_screens' );
+add_action( 'admin_init', 'bbcoa_block_county_admin_screens', 1 );
