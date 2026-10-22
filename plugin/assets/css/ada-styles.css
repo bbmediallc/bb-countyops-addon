@@ -10,7 +10,7 @@ a.custom-logo-link:focus-visible,
 .btn-box a:focus-visible,
 .elementor-toc__list-item-text:focus-visible,
 .e-n-accordion-item-title:focus-visible{
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: 3px !important;
 }
 
@@ -20,7 +20,7 @@ a.custom-logo-link:focus-visible,
 .form-select:focus,
 .btn-outline-secondary:focus-visible,
 .btn-primary:focus-visible {
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: 2px !important;
     box-shadow: unset !important;
     border-color: #ced4da !important;
@@ -34,25 +34,25 @@ a.custom-logo-link:focus-visible,
 .gform-body.gform_body textarea:focus-visible,
 .gform-body.gform_body select:focus-visible,
 .elementor-toc__header:focus-visible{
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: -2px !important;
 }
 
 .gform_button.button:focus-visible,
 form a:focus-visible{
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: 2px !important;
     border: unset !important;
 }
 
 #menu-primary-menu .sub-menu li a:focus-visible{
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: -5px !important;
 }
 
 .acc-btn:focus-visible {
     outline: unset;
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: -5px !important;
 }
 
@@ -94,7 +94,7 @@ summary.e-n-accordion-item-title:hover .e-n-accordion-item-title-text{
 }
 
 form a {
-    color: #810003 !important;
+    color: {{accent_color}} !important;
     text-decoration: underline !important;
 }
 

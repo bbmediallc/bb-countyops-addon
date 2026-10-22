@@ -57,12 +57,13 @@ function bbcoa_ada_sitemap_body_class( $classes ) {
 }
 add_filter( 'body_class', 'bbcoa_ada_sitemap_body_class' );
 
-// Link color is #800000 on every county, Laclede included (unchanged from the
-// original snippet).
+// Links use the county's Accent color.
 function bbcoa_ada_sitemap_head_styles() {
 	if ( ! bbcoa_ada_sitemap_on_this_page() ) {
 		return;
 	}
+	$replacements = bbcoa_replacements();
+	$accent       = $replacements['{{accent_color}}'];
 	?>
 	<style>
 		.html-sitemap ul,
@@ -84,7 +85,7 @@ function bbcoa_ada_sitemap_head_styles() {
 		}
 		.html-sitemap a {
 			text-decoration: underline !important;
-			color: #800000 !important;
+			color: <?php echo esc_attr( $accent ); ?> !important;
 		}
 		.html-sitemap a:hover,
 		.html-sitemap a:focus {

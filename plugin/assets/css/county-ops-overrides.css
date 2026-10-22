@@ -4,7 +4,7 @@
 
 .mid-tax-payment :is(a, button, input, select, textarea):focus-visible,
     .nice-select.mid-tax-select:focus-visible{
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: 3px !important;
 }
 
@@ -14,8 +14,11 @@ button.mid-tax-button.mid-tax-submit-button:hover {
     border-color: #000000 !important;
 }
 
+/* Links are already the Accent color, so hover brightens it (keeps the hue;
+   #800000 becomes #a00000, still well over 4.5:1 on white). */
 section.mid-tax-results a:hover {
-    color: #8b0103 !important;
+    color: {{accent_color}} !important;
+    filter: brightness(1.25);
 }
 
 h3.mid-tax-result-name {
@@ -38,13 +41,13 @@ h3.mid-tax-result-name {
    focus styles win, as they did on Stoddard. */
 .mid-tax-result-actions a:focus-visible,
 .mid-tax-back-link a:focus-visible{
-    outline: 3px dashed #7f0003 !important;
+    outline: 3px dashed {{accent_color}} !important;
     outline-offset: 2px !important;
     box-shadow: unset !important;
 }
 
 .mid-tax-back-link a:hover{
-    color: #7f0003 !important;
+    color: {{accent_color}} !important;
     text-decoration: underline;
 }
 
@@ -74,4 +77,59 @@ h3.mid-tax-result-name {
 .mid-tax-totals-grid strong,
 .mid-tax-totals-grid dd{
     font-size: 1.25em !important;
+}
+
+/* CountyOps' own maroon (#8b0000 and darker shades) in the county's Accent
+   color. Hover/focus fills go black like the site's other buttons, and
+   disabled buttons stay CountyOps' gray. The red status and error text (due,
+   unavailable, blocked, failed) stays red. */
+.mid-tax-payment button:not(:disabled),
+.mid-tax-payment .mid-tax-button:not(:disabled),
+.mid-tax-payment .mid-tax-view-details:not(:disabled){
+    background: {{accent_color}} !important;
+    border-color: {{accent_color}} !important;
+}
+
+.mid-tax-payment button:not(:disabled):hover,
+.mid-tax-payment button:not(:disabled):focus,
+.mid-tax-payment .mid-tax-button:not(:disabled):hover,
+.mid-tax-payment .mid-tax-button:not(:disabled):focus,
+.mid-tax-payment .mid-tax-view-details:not(:disabled):hover,
+.mid-tax-payment .mid-tax-view-details:not(:disabled):focus{
+    background: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.mid-tax-error{
+    border-left-color: {{accent_color}} !important;
+}
+
+.mid-tax-email-results{
+    border-color: {{accent_color}} !important;
+    color: {{accent_color}} !important;
+}
+
+.mid-tax-email-results:hover,
+.mid-tax-email-results:focus-visible{
+    background: {{accent_color}} !important;
+    color: #ffffff !important;
+}
+
+.mid-tax-sort-link,
+.mid-tax-payment .mid-tax-result-sort a,
+.mid-tax-payment .mid-tax-view-bill,
+.mid-tax-payment .mid-tax-back-results{
+    color: {{accent_color}} !important;
+}
+
+.mid-tax-results-table th.mid-tax-sort-active{
+    border-bottom-color: {{accent_color}} !important;
+}
+
+.mid-tax-table-wrap:focus-visible{
+    outline-color: {{accent_color}} !important;
+}
+
+.mid-tax-payment-checkbox{
+    accent-color: {{accent_color}} !important;
 }

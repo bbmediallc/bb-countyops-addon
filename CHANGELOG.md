@@ -2,6 +2,27 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.3] - 2026-10-22
+
+### Changed
+- No more hard-coded maroon: everything that was `#7f0003`, `#7f0005`,
+  `#810003`, `#8b0103` or `#800000` in the plugin now uses the county's
+  Accent color. That covers the dashed focus outlines, text-editor links and
+  list bullets, form links, the Gravity Forms and payment Submit buttons,
+  sitemap links, the home pod focus outline and the CountyOps result links.
+  Most counties look the same (their Accent is `#800000`); Laclede now uses
+  its own color throughout.
+- County Ops Overrides: CountyOps' own maroon (Search, Reset and View Details
+  buttons, Email results, sort links and active sort column, View bill and
+  Back to results links, results table focus outline, payment checkboxes,
+  error message border) uses the Accent color. Result links brighten on
+  hover. Button hover/focus fills are
+  black, like the site's other buttons; disabled buttons stay gray. Red
+  status and error text is unchanged.
+- Theme Overrides: Laclede's "Missouri County Collector Websites" table
+  (links, focus outline, mobile row borders and labels) uses the Accent color
+  instead of the page's hard-coded `#800000`.
+
 ## [1.5.2] - 2026-10-22
 
 ### Changed

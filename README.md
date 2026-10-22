@@ -62,15 +62,16 @@ code runs with the default colors and no banner or header search.
 |---|---|---|
 | County name | | Label only. |
 | Website addresses | | One per line. List staging **and** live, e.g. `wright.bandbdev.com` and `wrightcountycollector.com`. |
-| Accent color | `#800000` | TablePress table header background, service card hover background, FAQ question text, mobile submenu button (open), header search button, skip-to-content link outline and hover. |
+| Accent color | `#800000` | The site's maroon everywhere: dashed focus outlines, text-editor links and list bullets, form links, Gravity Forms and payment Submit buttons, sitemap links, home pod focus outline, TablePress table header background, service card hover background, FAQ question text, mobile submenu button (open), header search button, skip-to-content link outline and hover, and CountyOps' buttons, links, sort markers and checkboxes. |
 | Accordion link color | `#8c0708` | Links inside accordion/FAQ answers. |
 | Footer link hover color | `#AF8C5D` | Footer heading links on hover. |
 | Banner image | none | Background of the page header banner (`.page-breadcrumb`) and the search results header. Stored as `/wp-content/uploads/...` when it's on the same site, so it survives the move from staging to live. |
 | Banner focal point | `50% 50%` | `background-position` of the banner, e.g. `50% 40%`. |
 | Search in header | off | Puts a site search box in the header top bar, beside the top menu. Built into the plugin; the button uses the Accent color. |
 
-Every other color in the shared CSS (the `#7f0003` focus outlines etc.) is the
-same on all counties and fixed in the files.
+No maroon is hard-coded in the plugin; it all comes from the Accent color.
+The other fixed colors (black hovers, white text, gold footer, the red status
+and error text in CountyOps) are the same on all counties.
 
 ### Adding a county
 
@@ -141,11 +142,11 @@ Everything below runs on every county. "WCAG" references are to WCAG 2.1.
 
 | File | Was | What it does |
 |---|---|---|
-| `ada-sitemap.php` | ADA Sitemap | `[ada_sitemap]` shortcode: an accessible HTML sitemap of all published pages (nested). "Posts by Category" was removed in 1.4.1 (always empty), with its own list styles and an `ada-sitemap` body class. Its link color is `#800000` everywhere (Laclede too). |
+| `ada-sitemap.php` | ADA Sitemap | `[ada_sitemap]` shortcode: an accessible HTML sitemap of all published pages (nested). "Posts by Category" was removed in 1.4.1 (always empty), with its own list styles and an `ada-sitemap` body class. Links use the county's **Accent color**. |
 | `viewport-zoom.php` | Re-Enable Theme Pinch/Zoom | GovArnex's viewport tag blocks pinch-zoom, which fails WCAG 1.4.4 (Resize Text). Rewrites it to `width=device-width, initial-scale=1.0`. Side effects carried over as-is: removes WordPress's resource hints (dns-prefetch/preconnect), and unhooks `wp_no_robots` (deprecated, no-op). |
 | `elementor-link-options-open.php` | Keep Elementor Button Settings Open | Elementor editor only: keeps link options (new window, nofollow, attributes) visible instead of behind the gear icon. B&B Media Elementor Add-Ons does the same; both together is harmless. |
 | `icon-box-duplicate-links.php` | Fix Duplicate Elmentor Icon Links | A linked Icon Box links both the icon and the title. Hides the icon's link from screen readers and the tab order so there's one link (WCAG 2.4.4). |
-| `clickable-home-pods.php` | Clickable Home Pods | Makes the whole GovArnex Features box ("home pod") clickable. Keyboard focus is one solid maroon outline around the whole pod, none on the title link, none on mouse clicks (WCAG 2.4.7). Don't add a title-link focus outline in ADA Styles, or keyboard users see two. |
+| `clickable-home-pods.php` | Clickable Home Pods | Makes the whole GovArnex Features box ("home pod") clickable. Keyboard focus is one solid Accent color outline around the whole pod, none on the title link, none on mouse clicks (WCAG 2.4.7). Don't add a title-link focus outline in ADA Styles, or keyboard users see two. |
 | `logo-alt-text.php` | (new in 1.4.0) | GovArnex hard-codes `alt="Logo"` on its logo images (mobile menu, preloader, default header/sticky logos), so the mobile home link was announced as "Logo". Swaps it for the site's name through WordPress translation; no theme edit (WCAG 1.1.1, 2.4.4). |
 | `faq-toggle-buttons.php` | (new in 1.3.0) | GovArnex FAQ widget: puts each question inside a real `<button class="acc-trigger">` within its `<h3>` and hides the plus icon from screen readers, so headings survive (WCAG 1.3.1). Done as the widget renders, so theme updates can't undo it. |
 | `faq-answer-editor.php` | Govarnex FAQ Answer WYSIWYG Editor | GovArnex FAQ widget: rich text editor for answers instead of a plain box, panel items labeled by question, and empty paragraphs hidden. |
@@ -183,10 +184,10 @@ so the cascade is unchanged: every script first, then the CSS (see
 
 | File | Was | What it does |
 |---|---|---|
-| `county-ops-overrides.css` | County Ops Overrides | CountyOps tax search/payment forms: visible focus outlines, button hover colors, result name size. |
+| `county-ops-overrides.css` | County Ops Overrides | CountyOps tax search/payment forms: visible focus outlines, button hover colors, result name size, and CountyOps' own maroon replaced with the county's Accent color (red status/error text left alone). |
 | `backend-overrides.css` | Backend Overrides | wp-admin (and front-end toolbar): hides unused toolbar items and the media modal's alt-text hint, and shows a large "Remember to add ALT text" reminder in the media library. |
 | `ada-styles.css` | ADA Styles | Focus-visible outlines, contrast and underline fixes across the theme, widgets and forms. |
-| `theme-overrides.css` | Theme Overrides | GovArnex look-and-feel fixes: header/logo sizing, menus, banner, footer, buttons, TablePress, service cards, accordions, search results. Uses the county's colors and banner. Prints last so it wins ties. |
+| `theme-overrides.css` | Theme Overrides | GovArnex look-and-feel fixes: header/logo sizing, menus, banner, footer, buttons, TablePress, service cards, accordions, search results, and Laclede's "Missouri County Collector Websites" table (scoped to that page's widget). Uses the county's colors and banner. Prints last so it wins ties. |
 | `header-search.css` | Laclede's Theme Overrides | Top bar layout and the search form's look (sized and colored to match Laclede's original) when **Search in header** is on. Only prints for counties using it. |
 
 The plugin also prints `.page-content { overflow: unset; }` at the same point

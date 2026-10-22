@@ -1,7 +1,7 @@
 .main-header-one__top-inner{width:100%;justify-content:flex-end}
 .main-header-one__top-left{display:flex;flex:1 1 auto;align-items:center;justify-content:flex-end;gap:16px}
 .main-header-one__top-left-menu a{white-space:nowrap}
-/* Dashed like the site's other focus outlines, but white: the usual #7f0003 maroon
+/* Dashed like the site's other focus outlines, but white: the usual Accent color
    doesn't show on the dark top bar (WCAG 1.4.11 needs 3:1 against it). */
 .main-header-one__top-left-menu a:focus-visible{outline:3px dashed #ffffff;outline-offset:3px}
 .bb-header-template{max-width:320px;width:100%;min-width:0}

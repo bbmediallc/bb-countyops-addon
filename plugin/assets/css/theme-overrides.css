@@ -225,7 +225,7 @@ ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 600 !important;
     position: absolute !important;
-    color: #7f0003 !important;
+    color: {{accent_color}} !important;
     content: '\f192' !important;
     font-size: 14px !important;
     left: -24px !important;
@@ -253,7 +253,7 @@ ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before {
 
 .page-content .elementor-widget-text-editor a,
 .page-content .elementor-widget-text-editor .elementor-text-editor a{
-    color: #7f0005 !important;
+    color: {{accent_color}} !important;
     text-decoration: underline;
 }
 
@@ -295,7 +295,7 @@ p.gform_required_legend {
     color: #ffffff !important;
     font-size: 18px !important;
     font-weight: 700 !important;
-    background: #7f0003 !important;
+    background: {{accent_color}} !important;
     transition: all 0.3s ease-in-out 0.1s;
 }
 
@@ -309,7 +309,7 @@ p.gform_required_legend {
     padding: 15px 35px !important;
     color: #ffffff !important;
     font-weight: 700 !important;
-    background: #7f0003 !important;
+    background: {{accent_color}} !important;
     transition: all 0.3s ease-in-out 0.1s;
     border: unset!important;
     line-height: 1 !important;
@@ -438,4 +438,27 @@ body.search-results .blog-standard .blog-style1__single-content{
 .acc-content a:hover {
     color: #000000;
     text-decoration: none;
+}
+
+/* Laclede's "Missouri County Collector Websites" table: the page's own
+   Elementor custom CSS hard-codes #800000. Scoped to that page's shortcode
+   widget so other sites' TablePress table 3 is untouched. */
+.elementor-element-c0a55ab #tablepress-3 td a,
+.elementor-element-c0a55ab #tablepress-3 tbody tr > *::before{
+    color: {{accent_color}};
+}
+
+.elementor-element-c0a55ab #tablepress-3 td a:hover,
+.elementor-element-c0a55ab #tablepress-3 td a:focus{
+    color: #000000;
+}
+
+.elementor-element-c0a55ab #tablepress-3 td a:focus-visible{
+    outline-color: {{accent_color}};
+}
+
+@media (max-width: 767px){
+    .elementor-element-c0a55ab #tablepress-3 tbody tr{
+        border-bottom-color: {{accent_color}};
+    }
 }

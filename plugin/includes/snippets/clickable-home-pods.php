@@ -3,7 +3,7 @@
 //
 // Makes the whole GovArnex Features box ("home pod") clickable, not just its
 // link text: the link's ::after is stretched over the box. Keyboard focus is
-// shown as one solid maroon outline around the whole box, with nothing on the
+// shown as one solid Accent color outline around the whole box, with nothing on the
 // title link, and no outline on mouse clicks (WCAG 2.4.7 Focus Visible, and a
 // larger target for 2.5.8). ADA Styles must not give the title link its own
 // focus outline, or keyboard users see two.
@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function bbcoa_clickable_home_pods_styles() {
+	$replacements = bbcoa_replacements();
+	$accent       = $replacements['{{accent_color}}'];
 	?>
 	<style>
 		.elementor-widget-govarnex_features .features-style1__single-content {
@@ -35,7 +37,7 @@ function bbcoa_clickable_home_pods_styles() {
 			box-shadow: none !important;
 		}
 		.elementor-widget-govarnex_features .features-style1__single:has(a:focus-visible) {
-			outline: 3px solid #7f0003;
+			outline: 3px solid <?php echo esc_attr( $accent ); ?>;
 			outline-offset: 3px;
 			border-radius: 15px;
 		}
