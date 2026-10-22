@@ -2,7 +2,7 @@
 // ADA Sitemap (formerly Code Snippets: "ADA Sitemap").
 //
 // [ada_sitemap] shortcode: an accessible HTML sitemap of every published page,
-// nested by parent. (Its "Posts by Category" section was removed in 1.4.1;
+// nested by parent, with the home page first. (Its "Posts by Category" section was removed in 1.4.1;
 // the collector sites don't use posts, so it was always empty.) Pages using
 // it get an "ada-sitemap" body class and the list styles below.
 
@@ -19,6 +19,18 @@ function bbcoa_ada_sitemap_tree( $parent = 0 ) {
 
 	if ( ! $pages ) {
 		return '';
+	}
+	// The home page (Settings > Reading > Homepage) always comes first; the
+	// rest stay in menu order, then alphabetical.
+	$front = 'page' === get_option( 'show_on_front' ) ? (int) get_option( 'page_on_front' ) : 0;
+	if ( $front ) {
+		foreach ( $pages as $i => $page ) {
+			if ( (int) $page->ID === $front ) {
+				unset( $pages[ $i ] );
+				array_unshift( $pages, $page );
+				break;
+			}
+		}
 	}
 	$output = '<ul>';
 	foreach ( $pages as $page ) {

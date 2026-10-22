@@ -2,6 +2,12 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.6] - 2026-10-22
+
+### Changed
+- Sitemap: the home page (Settings > Reading > Homepage) is always listed
+  first; the other pages stay alphabetical after it.
+
 ## [1.5.5] - 2026-10-22
 
 ### Changed
