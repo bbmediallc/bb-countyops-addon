@@ -2,6 +2,14 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.8] - 2026-10-23
+
+### Added
+- Search Widget ARIA Fix (`search-widget-aria-fix.js`): Elementor Pro Search
+  widgets with live results turned off no longer claim to be a combobox
+  with a popup, and their empty results box is no longer a Tab stop
+  (WCAG 4.1.2). Widgets with live results on are untouched.
+
 ## [1.5.7] - 2026-10-22
 
 ### Fixed

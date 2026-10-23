@@ -179,6 +179,7 @@ so the cascade is unchanged: every script first, then the CSS (see
 | `ada-accordions.js` | ADA Accordions (rewritten in 1.3.0) | GovArnex FAQ accordions: drives the question buttons that `faq-toggle-buttons.php` adds, one panel open at a time, `aria-expanded`/`aria-controls` always matching what's on screen. Stops GovArnex's own handler, which wouldn't close an open panel (WCAG 4.1.2). |
 | `ada-tables.js` | ADA Tables | TablePress tables: turns the table's heading into a screen-reader `caption`, adds `scope` to column headers, and makes each row's first cell a row header (WCAG 1.3.1). |
 | `skip-to-content.js` | Skip to Content | Adds a "Skip to main content" link that appears on focus and jumps to `.page-content` (WCAG 2.4.1). Uses the county's **Accent color**. |
+| `search-widget-aria-fix.js` | Search Widget ARIA Fix | Elementor Pro Search widgets with live results turned off still announce themselves as a combobox with a popup, and their empty results box is focusable. Removes those combobox attributes from the input and the results box's `tabindex`, so screen readers hear a plain search field and Tab doesn't stop on an empty box (WCAG 4.1.2). Widgets with live results on are left alone. |
 
 **CSS** (`assets/css/`)
 

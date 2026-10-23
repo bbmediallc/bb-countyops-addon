@@ -33,6 +33,7 @@ function bbcoa_js_files() {
 		'ada-accordions',
 		'ada-tables',
 		'skip-to-content',
+		'search-widget-aria-fix',
 	];
 }
 
