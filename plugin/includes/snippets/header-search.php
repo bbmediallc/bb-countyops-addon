@@ -27,7 +27,7 @@ function bbcoa_header_search_form() {
 	ob_start();
 	?>
 	<div class="bb-header-template bbcoa-header-search">
-		<form class="bbcoa-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<form class="bbcoa-search" role="search" aria-label="Header search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<label class="bbcoa-search__label" for="bbcoa-header-search-input">Search this site</label>
 			<input id="bbcoa-header-search-input" class="bbcoa-search__input" type="search" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="Type to start searching...">
 			<button class="bbcoa-search__submit" type="submit" aria-label="Search"><i class="icon-search" aria-hidden="true"></i></button>

@@ -2,6 +2,14 @@
 
 Each `## [version]` section becomes the release notes on GitHub.
 
+## [1.5.9] - 2026-10-23
+
+### Fixed
+- Two unnamed search landmarks on pages with an Elementor Search widget
+  (WCAG 1.3.1, 2.4.1): screen readers announced both as just "search". The
+  header search form is now "Header search" and Elementor Search widgets are
+  "Page search" (numbered if a page has more than one).
+
 ## [1.5.8] - 2026-10-23
 
 ### Added
